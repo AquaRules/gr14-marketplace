@@ -34,8 +34,9 @@ contract Lend is AccessControl, ReentrancyGuardUpgradeable {
 
 	uint256 public decimals;
 
-	function initialize() external initializer {
+	function initialize(IERC20 _currency) external initializer {
 		decimals = 18;
+		currency = _currency;
 	}
 
 	/// @dev Allows admin to set tokens that can be mortgaged
