@@ -6,11 +6,19 @@
   gap: 2rem;
   margin: 4rem auto;
   width: calc(4rem * 8 + 4px);
+  @media screen and (max-width: 600px) {
+    width: calc(6rem * 3.5);
+    gap: 1rem;
+    margin: 6rem auto 2rem auto;
+  }
   h1 {
     font-family: $font-main;
     font-weight: 400;
     font-size: 4rem;
     color: $primary;
+    @media screen and (max-width: 600px) {
+      font-size: 2.5rem;
+    }
   }
   .buttons {
     @include flex;
@@ -28,8 +36,11 @@
       cursor: pointer;
       text-transform: uppercase;
       transition-duration: 150ms;
-      &[datatype="active"] {
+      &[datatype='active'] {
         color: $secondary;
+      }
+      @media screen and (max-width: 600px) {
+        font-size: 1rem;
       }
     }
   }
