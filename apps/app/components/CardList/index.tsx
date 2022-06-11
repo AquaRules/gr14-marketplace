@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from '../Card';
 import styles from './index.module.scss';
 
 export const CardList: React.FC = () => {
@@ -14,12 +15,19 @@ export const CardList: React.FC = () => {
               key={i}
               datatype={i == chainSelect ? 'active' : ''}
               className={styles.button}
-              onClick={()=>setChainSelect(i)}
+              onClick={() => setChainSelect(i)}
             >
               {v.title}
             </div>
           );
         })}
+      </div>
+      <div className={styles.cardWrapper}>
+        {Array(16)
+          .fill(0)
+          .map((i) => {
+            return <Card key={i} />;
+          })}
       </div>
     </div>
   );
