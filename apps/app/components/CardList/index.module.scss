@@ -24,7 +24,7 @@
       font-size: 1rem;
       text-transform: capitalize;
       color: $secondary;
-      min-width: 6rem;
+      width: 7rem;
       user-select: none;
       cursor: pointer;
       &[datatype="primary"] {
@@ -35,14 +35,14 @@
       }
       &[datatype='active primary'] {
         color: white;
-        width: 8rem;
+        width: 7rem;
         height: 2rem;
         border-radius: 1rem;
         background-color: $primary; 
       }
       &[datatype='active secondary'] {
         color: white;
-        width: 8rem;
+        width: 7rem;
         height: 2rem;
         border-radius: 1rem;
         background-color: rgba($color: $secondary, $alpha: 0.25); 
