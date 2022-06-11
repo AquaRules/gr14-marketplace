@@ -10,8 +10,20 @@ contract Lend is AccessControl {
 	/// @dev if a token is allowed to be staked
 	mapping(IERC721 => bool) public allowedToken;
 
+	uint256 public decimals;
+
+	struct MortgageData {
+		uint256 price;
+		uint256 duration;
+		uint256 roi;
+	}
+
 	/// @dev token price
-	mapping(IERC721 => uint256) public tokenPrice;
+	mapping(IERC721 => MortgageData) public tokenPrice;
+
+	function initialize() external initializer {
+		decimals = 18;
+	}
 
 	/// @dev Allows admin to set tokens that can be mortgaged
 	/// @param _token nft token address
@@ -23,12 +35,23 @@ contract Lend is AccessControl {
 
 	/// @dev Allows admin to token morgage price
 	/// @param _token nft token address
-	/// @param price mortgage price
-	function setTokenPrice(IERC721 _token, uint256 price) external onlyAdmin {
-		tokenPrice[_token] = price;
-		emit SetTokenPrice(_token, price);
+	/// @param mortgageData mortgage price
+	function setTokenPrice(IERC721 _token, MortgageData memory mortgageData)
+		external
+		onlyAdmin
+	{
+		tokenPrice[_token] = mortgageData;
+		emit SetTokenPrice(_token, mortgageData);
+	}
+
+	function getInterest(
+		uint256 p,
+		uint256 r,
+		uint256 t
+	) public view returns (uint256) {
+		return (decimals * (p * r * t)) / 100;
 	}
 
 	event SetAllowedToken(IERC721 indexed _token, bool enabled);
-	event SetTokenPrice(IERC721 indexed _token, uint256 price);
+	event SetTokenPrice(IERC721 indexed _token, MortgageData price);
 }
