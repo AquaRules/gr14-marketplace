@@ -1,0 +1,14 @@
+$primary: #2F8CCF;
+$secondary: #FF4C8B;
+$black: #333333;
+$white: #f9f9f9;
+
+$font-main: 'Fraunces', sans-serif;
+$font-secondary: 'Commissioner', sans-serif;
+ 
+@mixin flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

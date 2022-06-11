@@ -1,35 +1,32 @@
+@import '../../common.scss';
+
 .wrapper {
-  display: flex;
+  @include flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  margin: 64px auto;
-  width: 520px;
+  gap: 2rem;
+  margin: 4rem auto;
+  width: calc(4rem * 8 + 4px);
   h1 {
-    font-family: 'Fraunces', sans-serif;
+    font-family: $font-main;
     font-weight: 400;
-    font-size: 64px;
-    /* Primary */
-    color: #2f8ccf;
+    font-size: 4rem;
+    color: $primary;
   }
   .buttons {
-    display: flex;
-    flex-direction: row;
+    @include flex;
     justify-content: space-between;
-    align-items: center;
     list-style: none;
     padding-inline-start: 0;
     width: 100%;
     .button {
-      font-family: 'Commissioner';
+      font-family: $font-secondary;
       font-weight: 400;
-      font-size: 24px;
+      font-size: 1.5rem;
       text-align: center;
-      color: #333333;
+      color: $black;
       text-transform: uppercase;
       &[datatype="active"] {
-        color: #FF4C8B;
+        color: $secondary;
       }
     }
   }
