@@ -10,6 +10,16 @@ export function Index() {
         <Navbar />
         <CardList />
       </div>
+      <div className={styles.cover} />
+      <div className={styles.badge}>
+        <Image
+          src="/covalent.png"
+          alt="covalent logo"
+          width="19px"
+          height="21.5px"
+        />
+        Powered By Covalent
+      </div>
       <div className={styles.bg}>
         <Image
           src="/bg.svg"
