@@ -4,6 +4,7 @@
   @include flex;
   flex-direction: column;
   gap: 4rem;
+  margin-bottom: 4rem;
   .select {
     @include flex;
     justify-content: space-between;
@@ -18,19 +19,33 @@
     border-radius: 1.5rem;
     .button {
       @include flex;
-      font-family: $font-main;
+      font-family: $font-secondary;
+      font-weight: 500;
       font-size: 1rem;
       text-transform: capitalize;
       color: $secondary;
       min-width: 6rem;
       user-select: none;
       cursor: pointer;
-      &[datatype='active'] {
+      &[datatype='active primary'] {
         color: white;
         width: 8rem;
         height: 2rem;
-        background: $primary;
         border-radius: 1rem;
+        background-color: $primary; 
+      }
+      &[datatype='active secondary'] {
+        color: white;
+        width: 8rem;
+        height: 2rem;
+        border-radius: 1rem;
+        background-color: rgba($color: $secondary, $alpha: 0.25); 
+      }
+      .image {
+        display: relative;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.25rem;
       }
     }
   }

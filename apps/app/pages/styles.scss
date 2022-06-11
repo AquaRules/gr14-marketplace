@@ -8,12 +8,12 @@ html {
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   line-height: 1.5;
   tab-size: 4;
-  background-size:contain;
   scroll-behavior: smooth;
   min-height: 100vh;
   background-repeat: no-repeat no-repeat;
   background: url('/bg.svg');
   background-size: cover;
+  background-attachment: fixed;
 }
 body {
   font-family: inherit;
