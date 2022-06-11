@@ -12,12 +12,8 @@ html {
   scroll-behavior: smooth;
   min-height: 100vh;
   background-repeat: no-repeat no-repeat;
-  background: radial-gradient(
-      42.56% 65.85% at 4.89% 64.68%,
-      rgba(0, 148, 255, 0.5) 0%,
-      rgba(250, 253, 255, 0) 100%
-    ),
-    radial-gradient(24.39% 37.73% at 88.63% 17.59%, #ff96bb 0%, #f9f9f9 100%);
+  background: url('/bg.svg');
+  background-size: cover;
 }
 body {
   font-family: inherit;
