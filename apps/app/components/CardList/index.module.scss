@@ -1,0 +1,35 @@
+@import '../../common.scss';
+
+.wrapper {
+  @include flex;
+  .select {
+    @include flex;
+    justify-content: space-between;
+    width: 16rem;
+    height: 3rem;
+    padding: 0 0.75rem;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 139, 180, 0.5) 0%,
+      rgba(119, 198, 255, 0.5) 100%
+    );
+    border-radius: 1.5rem;
+    .button {
+      @include flex;
+      font-family: $font-main;
+      font-size: 1rem;
+      text-transform: capitalize;
+      color: $secondary;
+      min-width: 6rem;
+      user-select: none;
+      cursor: pointer;
+      &[datatype='active'] {
+        color: white;
+        width: 8rem;
+        height: 2rem;
+        background: $primary;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
