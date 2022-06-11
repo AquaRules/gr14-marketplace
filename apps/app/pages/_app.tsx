@@ -6,7 +6,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to app!</title>
+        <title>GR14 Marketplace</title>
       </Head>
       <main className="app">
         <Component {...pageProps} />
