@@ -5,11 +5,11 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
-import "./AccessControl.sol";
+import "./AccessControlContract.sol";
 
 /// @title Lend
 /// @notice User can come and mortgage his NFT
-contract Lend is AccessControl, ReentrancyGuardUpgradeable {
+contract Lend is AccessControlContract, ReentrancyGuardUpgradeable {
 	struct TokenData {
 		uint256 price;
 		uint256 duration;
