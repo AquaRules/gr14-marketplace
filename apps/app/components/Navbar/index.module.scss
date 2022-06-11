@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 64px auto;
+  width: 520px;
+  h1 {
+    font-family: 'Fraunces', sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    /* Primary */
+    color: #2f8ccf;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding-inline-start: 0;
+    width: 100%;
+    .button {
+      font-family: 'Commissioner';
+      font-weight: 400;
+      font-size: 24px;
+      text-align: center;
+      color: #333333;
+      text-transform: uppercase;
+      &[datatype="active"] {
+        color: #FF4C8B;
+      }
+    }
+  }
+}
