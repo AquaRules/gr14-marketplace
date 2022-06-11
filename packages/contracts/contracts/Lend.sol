@@ -7,19 +7,26 @@ import "./AccessControl.sol";
 /// @title Lend
 /// @notice User can come and mortgage his NFT
 contract Lend is AccessControl {
-	/// @dev if a token is allowed to be staked
-	mapping(IERC721 => bool) public allowedToken;
-
-	uint256 public decimals;
-
-	struct MortgageData {
+	struct TokenData {
 		uint256 price;
 		uint256 duration;
 		uint256 roi;
 	}
 
 	/// @dev token price
-	mapping(IERC721 => MortgageData) public tokenPrice;
+	mapping(IERC721 => TokenData) public tokenPrice;
+
+	/// @dev if a token is allowed to be staked
+	mapping(IERC721 => bool) public allowedToken;
+
+	struct MortgageData {
+		uint256 dateOfMortgage;
+	}
+
+	/// @dev user to token to tokenId to mortgage data;
+	mapping(address => mapping(IERC721 => mapping(uint256 => MortgageData))) _mortgageData;
+
+	uint256 public decimals;
 
 	function initialize() external initializer {
 		decimals = 18;
@@ -33,15 +40,15 @@ contract Lend is AccessControl {
 		emit SetAllowedToken(_token, enabled);
 	}
 
-	/// @dev Allows admin to token morgage price
+	/// @dev Allows admin to token token data
 	/// @param _token nft token address
-	/// @param mortgageData mortgage price
-	function setTokenPrice(IERC721 _token, MortgageData memory mortgageData)
+	/// @param tokenData mortgage price
+	function setTokenPrice(IERC721 _token, TokenData memory tokenData)
 		external
 		onlyAdmin
 	{
-		tokenPrice[_token] = mortgageData;
-		emit SetTokenPrice(_token, mortgageData);
+		tokenPrice[_token] = tokenData;
+		emit SetTokenPrice(_token, tokenData);
 	}
 
 	function getInterest(
@@ -53,5 +60,5 @@ contract Lend is AccessControl {
 	}
 
 	event SetAllowedToken(IERC721 indexed _token, bool enabled);
-	event SetTokenPrice(IERC721 indexed _token, MortgageData price);
+	event SetTokenPrice(IERC721 indexed _token, TokenData price);
 }
