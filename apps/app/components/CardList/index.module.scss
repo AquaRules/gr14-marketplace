@@ -27,6 +27,12 @@
       min-width: 6rem;
       user-select: none;
       cursor: pointer;
+      &[datatype="primary"] {
+        color: $primary;
+      }
+      &[datatype="secondary"] {
+        color: $secondary;
+      }
       &[datatype='active primary'] {
         color: white;
         width: 8rem;
