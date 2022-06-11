@@ -18,6 +18,7 @@ contract Lend is AccessControl, ReentrancyGuardUpgradeable {
 
 	struct MortgageData {
 		uint256 dateOfMortgage;
+		uint256 priceAtMortgage;
 	}
 
 	/// @dev token price
@@ -56,12 +57,16 @@ contract Lend is AccessControl, ReentrancyGuardUpgradeable {
 		emit SetTokenData(_token, _tokenData);
 	}
 
+	/// @dev allows user to mortgage
+	/// @param _token nft token address
+	/// @param tokenId nft tokenId to mortgage
 	function mortgage(IERC721 _token, uint256 tokenId) external nonReentrant {
 		require(allowedToken[_token], "Token not allowed");
 		_token.transferFrom(_msgSender(), address(this), tokenId);
 
 		_mortgageData[_msgSender()][_token][tokenId] = MortgageData({
-			dateOfMortgage: block.timestamp
+			dateOfMortgage: block.timestamp,
+			priceAtMortgage: tokenData[_token].price
 		});
 
 		currency.transferFrom(
