@@ -10,6 +10,7 @@ import "./AccessControlContract.sol";
 /// @title Lend
 /// @notice User can come and mortgage his NFT
 contract Lend is AccessControlContract, ReentrancyGuardUpgradeable {
+	uint256 rateOfInterest = 10;
 	struct TokenData {
 		uint256 price;
 		uint256 duration;
@@ -64,27 +65,51 @@ contract Lend is AccessControlContract, ReentrancyGuardUpgradeable {
 	function mortgage(IERC721 _token, uint256 tokenId) external nonReentrant {
 		require(allowedToken[_token], "Token not allowed");
 		_token.transferFrom(_msgSender(), address(this), tokenId);
-
+		uint256 principal = tokenData[_token].price;
 		_mortgageData[_msgSender()][_token][tokenId] = MortgageData({
 			dateOfMortgage: block.timestamp,
-			priceAtMortgage: tokenData[_token].price
+			priceAtMortgage: principal
 		});
 
-		currency.transferFrom(
-			address(this),
-			_msgSender(),
-			tokenData[_token].price
-		);
+		currency.transferFrom(address(this), _msgSender(), principal);
+		emit Mortgage(_token, tokenId, principal, _msgSender());
 	}
 
-	// function getInterest(
-	// 	uint256 p,
-	// 	uint256 r,
-	// 	uint256 t
-	// ) public view returns (uint256) {
-	// 	return (decimals * ((p * r * t))) / 100;
-	// }
+	function payback(IERC721 _token, uint256 tokenId) external nonReentrant {
+		require(allowedToken[_token], "Token not allowed");
+
+		MortgageData memory mortgageData = _mortgageData[_msgSender()][_token][
+			tokenId
+		];
+
+		uint256 amount = mortgageData.priceAtMortgage +
+			((mortgageData.priceAtMortgage *
+				(block.timestamp - mortgageData.dateOfMortgage) *
+				10 *
+				100) / 10000);
+
+		currency.transferFrom(
+			_msgSender(),
+			address(this),
+			tokenData[_token].price + amount
+		);
+
+		_token.transferFrom(address(this), _msgSender(), tokenId);
+		emit Payback(_token, tokenId, amount, _msgSender());
+	}
 
 	event SetAllowedToken(IERC721 indexed _token, bool enabled);
 	event SetTokenData(IERC721 indexed _token, TokenData price);
+	event Mortgage(
+		IERC721 _token,
+		uint256 tokenId,
+		uint256 principal,
+		address indexed user
+	);
+	event Payback(
+		IERC721 _token,
+		uint256 tokenId,
+		uint256 amount,
+		address indexed user
+	);
 }
