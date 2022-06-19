@@ -59,6 +59,6 @@
     @include flex;
     max-width: clamp(300px, 90vw, 1600px);
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 4rem;
   }
 }
