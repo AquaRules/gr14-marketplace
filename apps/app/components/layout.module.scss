@@ -1,0 +1,43 @@
+@import "../common.scss";
+
+.wrapper {
+  .bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+  }
+  .cover {
+    position: fixed;
+    width: 100vw;
+    height: 33vh;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 28.13%,
+      #ffffff 74.48%
+    );
+    mix-blend-mode: normal;
+  }
+  .badge {
+    @include flex;
+    position: fixed;
+    bottom: 2rem;
+    left: calc(50% - 97.5px);
+    width: 195px;
+    height: 32px;
+    background: #2f8ccf;
+    border-radius: 16px;
+    z-index: 2;
+    gap: 0.33rem;
+
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+}
