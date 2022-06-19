@@ -60,7 +60,7 @@ export const Card: React.FC<{ attributes: any }> = ({ attributes }) => {
         @{attributes.owner}
       </div>
       <div className={styles.hanging} datatype="right">
-        {attributes.likes} likes
+        {new Date(attributes.created).getHours()} hours ago
       </div>
     </div>
   );
