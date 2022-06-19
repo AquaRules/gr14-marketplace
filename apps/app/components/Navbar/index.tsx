@@ -1,12 +1,13 @@
+import Link from 'next/link';
 import React from 'react';
 import styles from './index.module.scss';
 
 export const Navbar: React.FC = () => {
   const [navSelection, setNavSelection] = React.useState<number>(0);
   const navOptions = [
-    { title: 'home' },
-    { title: 'create' },
-    { title: 'login/signup' },
+    { title: 'home', url: '/' },
+    { title: 'create', url: '/create' },
+    { title: 'login/signup', url: 'login' },
   ];
   return (
     <nav className={styles.wrapper}>
@@ -18,9 +19,9 @@ export const Navbar: React.FC = () => {
               className={styles.button}
               key={i}
               datatype={i == navSelection ? 'active' : ''}
-              onClick={()=>setNavSelection(i)}
+              onClick={() => setNavSelection(i)}
             >
-              {v.title}
+              <Link href={v.url}>{v.title}</Link>
             </li>
           );
         })}
