@@ -27,6 +27,7 @@ interface LendInterface extends ethers.utils.Interface {
     "initialize(address)": FunctionFragment;
     "mortgage(address,uint256)": FunctionFragment;
     "owner()": FunctionFragment;
+    "payback(address,uint256)": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
     "setAdmin(address,bool)": FunctionFragment;
     "setAllowedToken(address,bool)": FunctionFragment;
@@ -47,6 +48,10 @@ interface LendInterface extends ethers.utils.Interface {
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "payback",
+    values: [string, BigNumberish]
+  ): string;
   encodeFunctionData(
     functionFragment: "renounceOwnership",
     values?: undefined
@@ -81,6 +86,7 @@ interface LendInterface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "mortgage", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "payback", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "renounceOwnership",
     data: BytesLike
@@ -102,14 +108,18 @@ interface LendInterface extends ethers.utils.Interface {
 
   events: {
     "Initialized(uint8)": EventFragment;
+    "Mortgage(address,uint256,uint256,address)": EventFragment;
     "OwnershipTransferred(address,address)": EventFragment;
+    "Payback(address,uint256,uint256,address)": EventFragment;
     "SetAdmin(address,bool)": EventFragment;
     "SetAllowedToken(address,bool)": EventFragment;
     "SetTokenData(address,tuple)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Mortgage"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Payback"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "SetAdmin"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "SetAllowedToken"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "SetTokenData"): EventFragment;
@@ -117,8 +127,26 @@ interface LendInterface extends ethers.utils.Interface {
 
 export type InitializedEvent = TypedEvent<[number] & { version: number }>;
 
+export type MortgageEvent = TypedEvent<
+  [string, BigNumber, BigNumber, string] & {
+    _token: string;
+    tokenId: BigNumber;
+    principal: BigNumber;
+    user: string;
+  }
+>;
+
 export type OwnershipTransferredEvent = TypedEvent<
   [string, string] & { previousOwner: string; newOwner: string }
+>;
+
+export type PaybackEvent = TypedEvent<
+  [string, BigNumber, BigNumber, string] & {
+    _token: string;
+    tokenId: BigNumber;
+    amount: BigNumber;
+    user: string;
+  }
 >;
 
 export type SetAdminEvent = TypedEvent<
@@ -210,6 +238,12 @@ export class Lend extends BaseContract {
 
     owner(overrides?: CallOverrides): Promise<[string]>;
 
+    payback(
+      _token: string,
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
@@ -272,6 +306,12 @@ export class Lend extends BaseContract {
 
   owner(overrides?: CallOverrides): Promise<string>;
 
+  payback(
+    _token: string,
+    tokenId: BigNumberish,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   renounceOwnership(
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
@@ -331,6 +371,12 @@ export class Lend extends BaseContract {
 
     owner(overrides?: CallOverrides): Promise<string>;
 
+    payback(
+      _token: string,
+      tokenId: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
 
     setAdmin(
@@ -381,6 +427,26 @@ export class Lend extends BaseContract {
       version?: null
     ): TypedEventFilter<[number], { version: number }>;
 
+    "Mortgage(address,uint256,uint256,address)"(
+      _token?: null,
+      tokenId?: null,
+      principal?: null,
+      user?: string | null
+    ): TypedEventFilter<
+      [string, BigNumber, BigNumber, string],
+      { _token: string; tokenId: BigNumber; principal: BigNumber; user: string }
+    >;
+
+    Mortgage(
+      _token?: null,
+      tokenId?: null,
+      principal?: null,
+      user?: string | null
+    ): TypedEventFilter<
+      [string, BigNumber, BigNumber, string],
+      { _token: string; tokenId: BigNumber; principal: BigNumber; user: string }
+    >;
+
     "OwnershipTransferred(address,address)"(
       previousOwner?: string | null,
       newOwner?: string | null
@@ -395,6 +461,26 @@ export class Lend extends BaseContract {
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
+    >;
+
+    "Payback(address,uint256,uint256,address)"(
+      _token?: null,
+      tokenId?: null,
+      amount?: null,
+      user?: string | null
+    ): TypedEventFilter<
+      [string, BigNumber, BigNumber, string],
+      { _token: string; tokenId: BigNumber; amount: BigNumber; user: string }
+    >;
+
+    Payback(
+      _token?: null,
+      tokenId?: null,
+      amount?: null,
+      user?: string | null
+    ): TypedEventFilter<
+      [string, BigNumber, BigNumber, string],
+      { _token: string; tokenId: BigNumber; amount: BigNumber; user: string }
     >;
 
     "SetAdmin(address,bool)"(
@@ -488,6 +574,12 @@ export class Lend extends BaseContract {
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
 
+    payback(
+      _token: string,
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
@@ -544,6 +636,12 @@ export class Lend extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    payback(
+      _token: string,
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
 
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
