@@ -24,9 +24,18 @@ contract PrimarySale is AccessControlContract, ReentrancyGuardUpgradeable {
 		emit SetCurrency(currency, price);
 	}
 
-	function initialize(IERC721 token_) external initializer {
+	function initialize(
+		IERC721 token_,
+		IERC20Upgradeable[] memory _currencies,
+		uint256[] memory _prices
+	) external initializer {
 		token = token_;
 		__Ownable_init();
+
+		require(_currencies.length == _prices.length, "Length");
+		for (uint256 index = 0; index < _currencies.length; index++) {
+			currencies[_currencies[index]] = _prices[index];
+		}
 	}
 
 	function createSale(IERC20Upgradeable currency, uint256 numberOfTokens)
