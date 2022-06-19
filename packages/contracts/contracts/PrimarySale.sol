@@ -26,6 +26,7 @@ contract PrimarySale is AccessControlContract, ReentrancyGuardUpgradeable {
 
 	function initialize(IERC721 token_) external initializer {
 		token = token_;
+		__Ownable_init();
 	}
 
 	function createSale(IERC20Upgradeable currency, uint256 numberOfTokens)
