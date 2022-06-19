@@ -18,12 +18,12 @@
     bottom: -1.5rem;
     font-size: 0.75rem;
     font-weight: bold;
-  }
-  [datatype='left'] {
-    left: 1rem;
-  }
-  [datatype='right'] {
-    right: 1rem;
+    &[datatype='left'] {
+      left: 1rem;
+    }
+    &[datatype='right'] {
+      right: 1rem;
+    }
   }
   @media screen and (max-width: 700px) {
     width: 67.5vw;
