@@ -8,6 +8,23 @@
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid $primary;
   border-radius: 1.5rem;
+  position: relative;
+  img {
+    border-radius: 1.5rem;
+    z-index: 0;
+  }
+  .hanging {
+    position: absolute;
+    bottom: -1.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  [datatype='left'] {
+    left: 1rem;
+  }
+  [datatype='right'] {
+    right: 1rem;
+  }
   @media screen and (max-width: 700px) {
     width: 67.5vw;
     height: 90vw;

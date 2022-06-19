@@ -10,6 +10,20 @@ export const CardList: React.FC = () => {
     { title: 'polygon', url: '/matic.png', color: 'secondary' },
   ];
 
+  const dummyCards = [
+    {
+      title: 'Card#1',
+      owner: 'abhinavr',
+      minted: Date.now() - 100 * 60 * 60 * 24,
+      likes: 1243,
+      type: 'Comedy',
+      id: '1',
+      price: { chain: 1, amount: 2 },
+      lend: { enabled: true, amount: 0.1 },
+      image_url: "https://64.media.tumblr.com/780e42f226309d1998293cee15814051/tumblr_mubkq9dZhh1rmfvsio1_400.gif"
+    },
+  ];
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.select}>
@@ -37,10 +51,9 @@ export const CardList: React.FC = () => {
         })}
       </div>
       <div className={styles.cardWrapper}>
-        {Array(16)
-          .fill(0)
-          .map((i) => {
-            return <Card key={i} />;
+        {dummyCards
+          .map((v,i) => {
+            return <Card key={i} attributes={v}/>;
           })}
       </div>
     </div>
