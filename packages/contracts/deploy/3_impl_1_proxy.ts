@@ -1,7 +1,6 @@
 import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/dist/types";
 import { Lend } from "../typechain";
-import { ERC20PresetMinterPauser } from "../typechain/ERC20PresetMinterPauser";
 import { skipUnlessTest } from "../utils/network";
 
 const func: DeployFunction = async (hre) => {
