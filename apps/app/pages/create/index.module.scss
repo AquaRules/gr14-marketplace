@@ -20,6 +20,12 @@
     font-size: 1.125rem;
     margin: 1.5rem 0 0.5rem 0;
   }
+  input {
+    font-family: $font-secondary;
+    font-weight: 300;
+    color: black;
+    font-size: 1rem;
+  }
   button {
     margin: 2rem 0;
     background-color: rgba($color: $secondary, $alpha: 0.75);
