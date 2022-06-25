@@ -153,7 +153,7 @@ export default function Index() {
               isLoading={props.isSubmitting}
               type="submit"
             >
-              Submit
+              Mint This NFT
             </Button>
           </Form>
         )}
