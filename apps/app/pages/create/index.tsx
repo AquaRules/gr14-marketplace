@@ -40,8 +40,8 @@ export default function Index() {
       <h1>Create Your NFT</h1>
       <Formik
         initialValues={{
-          name: 'Covalent NFT',
-          image: 'https://example.com/1.jpg',
+          name: '',
+          image: '',
           type: catagories[0],
           chain: 'ethereum',
           price: 1,
@@ -61,7 +61,7 @@ export default function Index() {
               {({ field, form }) => (
                 <FormControl isInvalid={form.errors.name && form.touched.name}>
                   <FormLabel htmlFor="name">Title</FormLabel>
-                  <Input {...field} id="name" placeholder="name" />
+                  <Input {...field} id="name" placeholder="Covalent NFT" />
                   <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                 </FormControl>
               )}
@@ -72,7 +72,11 @@ export default function Index() {
                   isInvalid={form.errors.image && form.touched.image}
                 >
                   <FormLabel htmlFor="image">Image URL</FormLabel>
-                  <Input {...field} id="image" placeholder="image" />
+                  <Input
+                    {...field}
+                    id="image"
+                    placeholder="https://example.com/1.png"
+                  />
                   <FormErrorMessage>{form.errors.image}</FormErrorMessage>
                 </FormControl>
               )}
