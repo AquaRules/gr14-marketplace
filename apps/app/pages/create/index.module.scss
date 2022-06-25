@@ -1,1 +1,30 @@
-@import "../../common.scss";
+@import '../../common.scss';
+
+.wrapper {
+  width: min(80vw, 500px);
+  padding: 4rem;
+  margin: 0 auto 16rem auto;
+  background-color: rgba($color: white, $alpha: 0.5);
+  border-radius: 0.25rem;
+  h1 {
+    font-family: $font-main;
+    font-weight: 500;
+    color: $secondary;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  label {
+    font-family: $font-main;
+    font-family: 500;
+    color: $primary;
+    font-size: 1.125rem;
+    margin: 1.5rem 0 0.5rem 0;
+  }
+  button {
+    margin: 2rem 0;
+    background-color: rgba($color: $secondary, $alpha: 0.75);
+    &:hover {
+      background-color: rgba($color: $secondary, $alpha: 1);
+    }
+  }
+}
