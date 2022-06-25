@@ -45,6 +45,12 @@ const config: HardhatUserConfig = {
 			gasPrice: 3_500_000_000,
 			accounts: process.env.PRIVATE_KEY !== undefined ? accounts() : [],
 		},
+		kovan: {
+			url: process.env.KOVAN_URL || "",
+			chainId: 42,
+			gasPrice: 2_800_000_000,
+			accounts: process.env.PRIVATE_KEY !== undefined ? accounts() : [],
+		},
 	},
 	gasReporter: {
 		enabled: process.env.REPORT_GAS !== undefined,
