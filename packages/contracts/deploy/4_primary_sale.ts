@@ -6,7 +6,6 @@ const func: DeployFunction = async (hre) => {
 	const { deploy, execute } = deployments;
 
 	const { deployer } = await getNamedAccounts();
-	const DefaultProxyAdmin = await ethers.getContract("DefaultProxyAdmin");
 	const NFT = await ethers.getContract("NFTProxy");
 	const Currency = await ethers.getContract("TestERC20");
 
