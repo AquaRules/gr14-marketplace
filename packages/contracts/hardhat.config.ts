@@ -36,6 +36,15 @@ const config: HardhatUserConfig = {
 			{
 				version: "0.8.6",
 			},
+			{
+				version: "0.7.6",
+				settings: {
+					optimizer: {
+						enabled: true,
+						runs: 999999,
+					},
+				},
+			},
 		],
 	},
 	networks: {
@@ -51,14 +60,25 @@ const config: HardhatUserConfig = {
 			gasPrice: 2_800_000_000,
 			accounts: process.env.PRIVATE_KEY !== undefined ? accounts() : [],
 		},
+		mumbai: {
+			url: process.env.MUMBAI_URL || "",
+			chainId: 80001,
+			gasPrice: 12_800_000_000,
+			accounts: process.env.PRIVATE_KEY !== undefined ? accounts() : [],
+		},
 	},
 	gasReporter: {
 		enabled: process.env.REPORT_GAS !== undefined,
 		currency: "USD",
 	},
 	etherscan: {
-		apiKey: process.env.ETHERSCAN_API_KEY,
-	},
+		apiKey:
+			// {
+			// kovan: process.env.ETHERSCAN_API_KEY as string,
+			// mumbai:
+			process.env.POLYGONSCAN_API_KEY,
+		// },
+	} as any,
 	namedAccounts: {
 		deployer: {
 			default: 0,
