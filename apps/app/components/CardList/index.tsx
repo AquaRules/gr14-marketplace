@@ -1,5 +1,6 @@
+import { useCovalent } from '../../hooks/useCovalent';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card } from '../Card';
 import styles from './index.module.scss';
 
@@ -9,6 +10,28 @@ export const CardList: React.FC = () => {
     { title: 'ethereum', url: '/eth.png', color: 'primary' },
     { title: 'polygon', url: '/matic.png', color: 'secondary' },
   ];
+  const { getTokens, getTokenMetadata } = useCovalent();
+
+  useEffect(() => {
+    const run = async () => {
+      const data = await getTokens(
+        42,
+        '0x4fdc608B984dF53f9877ee1803327703e69F44E0'
+      );
+      const items = data.data.items;
+      for (let index = 0; index < items.length; index++) {
+        const item = items[index];
+        const itemData = await getTokenMetadata(
+          '42',
+          '0x4fdc608B984dF53f9877ee1803327703e69F44E0',
+          item.token_id
+        );
+        console.log(itemData.data);
+      }
+    };
+
+    run();
+  }, [getTokens]);
 
   const dummyCards = [
     {
@@ -30,8 +53,7 @@ export const CardList: React.FC = () => {
       id: '1',
       price: { chain: 1, amount: 2, chainName: 'ETH' },
       lend: { enabled: true, amount: 0.1 },
-      image_url:
-        'https://media2.giphy.com/media/G3lxvBMhGu53y/giphy.gif',
+      image_url: 'https://media2.giphy.com/media/G3lxvBMhGu53y/giphy.gif',
     },
     {
       title: 'Card#1',
