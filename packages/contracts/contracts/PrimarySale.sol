@@ -38,7 +38,7 @@ contract PrimarySale is AccessControlContract, ReentrancyGuardUpgradeable {
 		}
 	}
 
-	function createSale(IERC20Upgradeable currency, uint256 numberOfTokens)
+	function purchase(IERC20Upgradeable currency, uint256 numberOfTokens)
 		external
 		nonReentrant
 		returns (uint256[] memory tokenIds)

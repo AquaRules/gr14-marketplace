@@ -19,12 +19,10 @@ const func: DeployFunction = async (hre) => {
 	await (
 		await (
 			(await ethers.getContract("TestERC20")) as ERC20PresetMinterPauser
-		).mint(deployer, ethers.utils.parseEther("100000"))
+		).mint(deployer, ethers.utils.parseEther("1000000"))
 	).wait();
 };
 
 export default func;
 
 func.tags = ["TestERC20"];
-
-func.skip = skipUnlessTest;
