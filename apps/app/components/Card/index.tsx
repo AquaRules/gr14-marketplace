@@ -16,6 +16,11 @@ export type Attributes = {
 };
 
 export const Card: React.FC<{ attributes: Attributes }> = ({ attributes }) => {
+  const [isOwner, setIsOwner] = React.useState(false);
+  React.useEffect(()=>{
+    setIsOwner(true);
+  },[])
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.inner}>
@@ -53,6 +58,7 @@ export const Card: React.FC<{ attributes: Attributes }> = ({ attributes }) => {
               <div>{attributes.owner}</div>
             </li>
           </ul>
+          {isOwner ? <button>Cancel</button> : <button>Buy</button>}
         </div>
       </div>
       <div className={styles.hanging} datatype="left">

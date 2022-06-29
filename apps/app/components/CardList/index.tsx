@@ -65,7 +65,7 @@ export const CardList: React.FC = () => {
   const dummyCards: Attributes[] = [
     {
       title: 'Card#1',
-      owner: 'abhinavr',
+      owner: 'aqua',
       type: 'Comedy',
       id: 1,
       price: { chainId: 1, amount: 5.2, chainName: 'ETH' },
@@ -74,7 +74,7 @@ export const CardList: React.FC = () => {
     },
     {
       title: 'Card#1',
-      owner: 'abhinavr',
+      owner: 'aqua',
       type: 'Comedy',
       id: 2,
       price: { chainId: 1, amount: 2, chainName: 'ETH' },
