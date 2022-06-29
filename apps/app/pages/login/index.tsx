@@ -21,7 +21,7 @@ export default function Index() {
 
   const handleMetamaskConnect = async () => {
     await connect();
-    setConnected(true)
+    setConnected(true);
   };
 
   const createSchema = Yup.object().shape({

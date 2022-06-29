@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import useAuth from '../AuthContext';
 import { Card } from '../Card';
 import styles from './index.module.scss';
 
@@ -9,6 +10,7 @@ export const CardList: React.FC = () => {
     { title: 'ethereum', url: '/eth.png', color: 'primary' },
     { title: 'polygon', url: '/matic.png', color: 'secondary' },
   ];
+  const { user } = useAuth();
 
   const dummyCards = [
     {
@@ -30,8 +32,7 @@ export const CardList: React.FC = () => {
       id: '1',
       price: { chain: 1, amount: 2, chainName: 'ETH' },
       lend: { enabled: true, amount: 0.1 },
-      image_url:
-        'https://media2.giphy.com/media/G3lxvBMhGu53y/giphy.gif',
+      image_url: 'https://media2.giphy.com/media/G3lxvBMhGu53y/giphy.gif',
     },
     {
       title: 'Card#1',
@@ -70,29 +71,43 @@ export const CardList: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.select}>
-        {chainOptions.map((v, i) => {
-          return (
-            <div
-              key={i}
-              datatype={i == chainSelect ? 'active ' + v.color : v.color}
-              className={styles.button}
-              onClick={() => setChainSelect(i)}
-            >
-              <div className={styles.image}>
-                <Image
-                  src={v.url}
-                  alt={v.title}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                />
+      <div className={styles.row}>
+        <div className={styles.select}>
+          {chainOptions.map((v, i) => {
+            return (
+              <div
+                key={i}
+                datatype={i == chainSelect ? 'active ' + v.color : v.color}
+                className={styles.button}
+                onClick={() => setChainSelect(i)}
+              >
+                <div className={styles.image}>
+                  <Image
+                    src={v.url}
+                    alt={v.title}
+                    width="100%"
+                    height="100%"
+                    layout="responsive"
+                    objectFit="contain"
+                  />
+                </div>
+                {v.title}
               </div>
-              {v.title}
+            );
+          })}
+        </div>
+        {user.name !== '' ? (
+          <div className={styles.select}>
+            <div className={styles.button}>{user.name}</div>
+            <div className={styles.button} datatype="active secondary">
+              {user.address.substring(0, 8)}...
             </div>
-          );
-        })}
+          </div>
+        ) : (
+          <div className={styles.select}>
+            <div className={styles.button} style={{width:"100%"}}>Not logged into metamask</div>
+          </div>
+        )}
       </div>
       <div className={styles.cardWrapper}>
         {dummyCards.map((v, i) => {
