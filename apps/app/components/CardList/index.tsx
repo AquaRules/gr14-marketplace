@@ -16,7 +16,7 @@ export const CardList: React.FC = () => {
     { title: 'ethereum', url: '/eth.png', color: 'primary' },
     { title: 'polygon', url: '/matic.png', color: 'secondary' },
   ];
-  const [init, setInit] = React.useState(false);
+  const [init, setInit] = React.useState(0);
 
   const { user, loggedIn } = useAuth();
   const { getTokens, getTokenMetadata } = useCovalent();
@@ -72,12 +72,13 @@ export const CardList: React.FC = () => {
             _tokens.push(dataVal);
             return _tokens;
           });
+          setInit((init) => init + 1);
         }
       }
     };
-    if (init === false) {
+    if (init === 0) {
       run();
-      setInit(true);
+      setInit((init) => init + 1);
     }
   }, [getTokenMetadata, getTokens, init, getSale, getNFT, chainId, setTokens]);
 
@@ -88,7 +89,7 @@ export const CardList: React.FC = () => {
   React.useEffect(() => {
     if (loggedIn) getItems();
   }, [loggedIn]);
-
+  console.log({ tokens });
   return (
     <div className={styles.wrapper}>
       <div className={styles.row}>
@@ -132,9 +133,10 @@ export const CardList: React.FC = () => {
         )}
       </div>
       <div className={styles.cardWrapper}>
-        {tokens.map((v, i) => {
-          return <Card key={i} attributes={v} />;
-        })}
+        {init !== 0 &&
+          tokens.map((v, i) => {
+            return <Card key={i} attributes={v} />;
+          })}
       </div>
     </div>
   );
