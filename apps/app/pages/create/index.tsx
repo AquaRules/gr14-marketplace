@@ -12,7 +12,7 @@ import {
   Select,
 } from '@chakra-ui/react';
 import { Field, Form, Formik } from 'formik';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './index.module.scss';
 import * as Yup from 'yup';
 import { useMetaMask } from 'metamask-react';
@@ -87,14 +87,47 @@ export default function Index() {
       console.log('verify');
       await (await NFT.setApprovalForAll(Sale.address, true)).wait();
     }
-    await Sale.estimateGas.createSale({
+    console.log({
       tokenId: '1',
       currency: (await getTestERC20()).address,
       owner: account,
       price: ethers.utils.parseEther(values.price.toString()),
-      untill: 30 * 24 * 3600,
+      untill: Math.floor(Date.now() / 1000) + 30 * 24 * 3600,
     });
+    const tx = await Sale.createSale({
+      tokenId: '1',
+      currency: (await getTestERC20()).address,
+      owner: account,
+      price: ethers.utils.parseEther(values.price.toString()),
+      untill: Math.floor(Date.now() / 1000) + 30 * 24 * 3600,
+    });
+    const receipt = await tx.wait();
+    console.log({ receipt }, receipt.events);
+
+    const tokenId = NFT.interface
+      .parseLog(receipt.events[0])
+      .args.tokenId.toString();
+    const tokenURL =
+      'data:application/json;base64,' +
+      Buffer.from(
+        JSON.stringify({
+          name: values.name,
+          image: values.image,
+        })
+      ).toString('base64');
+
+    await (await NFT.setTokenURIs([tokenId], [tokenURL])).wait();
+
+    return {
+      receipt,
+      tokenId: tokenId,
+    };
   };
+
+  useEffect(() => {
+    const run = async () => ((window as any).NFT = await getNFT());
+    run();
+  }, [chainId, getNFT]);
 
   return (
     <div className={styles.wrapper}>

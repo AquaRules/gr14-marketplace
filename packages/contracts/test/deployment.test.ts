@@ -36,11 +36,21 @@ const setupFixture = deployments.createFixture(async () => {
 
 describe("run", () => {
 	it("mint", async () => {
-		const { deployer, TestERC20 } = await setupFixture();
+		const { deployer, TestERC20, PrimarySale } = await setupFixture();
 		await deployer.TestERC20.approve(
 			deployer.PrimarySale.address,
 			ethers.constants.MaxUint256
 		);
 		await deployer.PrimarySale.purchase(TestERC20.address, 2);
+
+		await deployer.NFT.setApprovalForAll(PrimarySale.address, true);
+
+		await PrimarySale.createSale({
+			tokenId: "1",
+			owner: deployer.address,
+			price: "1",
+			untill: Math.floor(Date.now() / 1000) + 30 * 3600,
+			currency: TestERC20.address,
+		});
 	});
 });

@@ -1,9 +1,9 @@
 {
   "42": {
     "rpc": "https://speedy-nodes-nyc.moralis.io/6a68cf0be9afb9582dc98bd1/eth/kovan",
-    "Sale": "0xd4C288F1D1a41b12d5CbB86d93d5694880Aad033",
-    "NFT": "0x4fdc608B984dF53f9877ee1803327703e69F44E0",
-    "TestERC20": "0xBBac6a2b5B063FDB9879906015cC149E4B631443"
+    "Sale": "0xe44931cEAB761bCF0666a970E8b99BeF2D52562C",
+    "NFT": "0x937EE1C3a24f790AA36CF3DF56CDfA76Ed94A945",
+    "TestERC20": "0x25de14a7D04Cb0dA50A9c72FAa179842bF1C8240"
   },
   "80001": {
     "rpc": "https://speedy-nodes-nyc.moralis.io/6a68cf0be9afb9582dc98bd1/polygon/mumbai"
