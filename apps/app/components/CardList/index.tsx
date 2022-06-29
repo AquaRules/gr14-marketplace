@@ -20,7 +20,7 @@ export const CardList: React.FC = () => {
 
   const { user, loggedIn } = useAuth();
   const { getTokens, getTokenMetadata } = useCovalent();
-  const { chainId, account, status, connect } = useMetaMask();
+  const { chainId, connect } = useMetaMask();
   const { getSale, getNFT } = useContracts();
 
   const getItems = React.useCallback(() => {
@@ -53,7 +53,7 @@ export const CardList: React.FC = () => {
               })
             ).json()
           )?.['message'];
-          console.log("FETCHED USER")
+          console.log('FETCHED USER');
           setTokens((_tokens) => {
             const tokenData = JSON.parse(
               atob(token_url.split('data:application/json;base64,')[1])
@@ -79,23 +79,15 @@ export const CardList: React.FC = () => {
       run();
       setInit(true);
     }
-  }, [
-    getTokenMetadata,
-    getTokens,
-    init,
-    getSale,
-    getNFT,
-    chainId,
-    setTokens
-  ]);
+  }, [getTokenMetadata, getTokens, init, getSale, getNFT, chainId, setTokens]);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     connect();
-  },[connect])
+  }, [connect]);
 
-  React.useEffect(()=>{
-    if(loggedIn) getItems();
-  },[loggedIn, user, account, status])
+  React.useEffect(() => {
+    if (loggedIn) getItems();
+  }, [loggedIn]);
 
   return (
     <div className={styles.wrapper}>
