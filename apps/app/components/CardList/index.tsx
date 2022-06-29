@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import { useMetaMask } from 'metamask-react';
 import config from '../../config.json';
+import { useContracts } from '../../contracts';
+import { ethers } from 'ethers';
 
 export const CardList: React.FC = () => {
   const [chainSelect, setChainSelect] = React.useState<number>(0);
@@ -15,10 +17,17 @@ export const CardList: React.FC = () => {
   ];
   const { user, loggedIn } = useAuth();
   const { getTokens, getTokenMetadata } = useCovalent();
-  const { chainId } = useMetaMask();
+  const { chainId, connect, account } = useMetaMask();
   const [init, setInit] = useState(false);
+
+  const { getSale, getNFT } = useContracts();
+  useEffect(() => {
+    connect();
+  }, [connect]);
   useEffect(() => {
     const run = async () => {
+      await connect();
+
       const data = await getTokens(
         parseInt(chainId.toString(), 16),
         config[parseInt(chainId.toString(), 16).toString()]['NFT']
@@ -31,35 +40,58 @@ export const CardList: React.FC = () => {
           config[parseInt(chainId.toString(), 16).toString()]['NFT'],
           item.token_id
         );
-
+        const Sale = await getSale();
         const token_url =
           itemData.data?.data?.items?.[0]?.nft_data?.[0]?.token_url;
-        if (token_url) {
+        const tokenId = itemData.data?.data?.items?.[0]?.nft_data?.[0].token_id;
+        if (token_url && tokenId) {
+          const amount = ethers.utils.formatEther(
+            (await Sale.saleMapping(tokenId)).price
+          );
+          const owner = await (await getNFT()).ownerOf(tokenId);
+          const user = (
+            await (
+              await fetch('/api/user/' + owner.toLowerCase(), {
+                method: 'GET',
+              })
+            ).json()
+          )?.['message'];
           setTokens((_tokens) => {
             const tokenData = JSON.parse(
               atob(token_url.split('data:application/json;base64,')[1])
             );
-            _tokens.push({
-              id: itemData.data?.data?.items?.[0]?.nft_data?.[0].token_id,
+
+            const dataVal = {
+              id: tokenId,
               title: tokenData?.['name'],
               image_url: tokenData?.['image'],
-              owner: '',
+              owner: user,
               price: {
-                amount: 'number',
-                chainName: 'string',
+                amount: amount,
+                chainName: 'USDT',
                 chainId: 'number',
               },
-            });
+            };
+            _tokens.push(dataVal);
             return _tokens;
           });
         }
       }
     };
-    if (chainId && init === false) {
+    if (chainId && init === false && account) {
       run();
       setInit(true);
     }
-  }, [getTokenMetadata, getTokens, chainId, init]);
+  }, [
+    getTokenMetadata,
+    getTokens,
+    chainId,
+    init,
+    getSale,
+    account,
+    connect,
+    getNFT,
+  ]);
 
   const [tokens, setTokens] = React.useState<Attributes[]>([]);
 
