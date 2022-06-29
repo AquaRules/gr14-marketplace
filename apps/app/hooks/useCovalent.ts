@@ -46,6 +46,7 @@ export const useCovalent = () => {
               attributes: string;
               owner: string;
             };
+            token_url?: string;
           }[];
         }[];
       };

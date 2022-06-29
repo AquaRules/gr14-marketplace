@@ -1,9 +1,11 @@
 import useAuth from '../AuthContext';
 import { useCovalent } from '../../hooks/useCovalent';
 import Image from 'next/image';
-import React, { useEffect } from 'react';
 import { Attributes, Card } from '../Card';
+import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
+import { useMetaMask } from 'metamask-react';
+import config from '../../config.json';
 
 export const CardList: React.FC = () => {
   const [chainSelect, setChainSelect] = React.useState<number>(0);
@@ -13,29 +15,54 @@ export const CardList: React.FC = () => {
   ];
   const { user, loggedIn } = useAuth();
   const { getTokens, getTokenMetadata } = useCovalent();
-
+  const { chainId } = useMetaMask();
+  const [init, setInit] = useState(false);
   useEffect(() => {
     const run = async () => {
       const data = await getTokens(
-        42,
-        '0x4fdc608B984dF53f9877ee1803327703e69F44E0'
+        parseInt(chainId.toString(), 16),
+        config[parseInt(chainId.toString(), 16).toString()]['NFT']
       );
       const items = data.data.items;
       for (let index = 0; index < items.length; index++) {
         const item = items[index];
         const itemData = await getTokenMetadata(
-          '42',
-          '0x4fdc608B984dF53f9877ee1803327703e69F44E0',
+          parseInt(chainId.toString(), 16).toString(),
+          config[parseInt(chainId.toString(), 16).toString()]['NFT'],
           item.token_id
         );
-        console.log(itemData.data);
+        const token_url =
+          itemData.data?.data?.items?.[0]?.nft_data?.[0]?.token_url;
+        if (token_url) {
+          setTokens((_tokens) => {
+            const tokenData = JSON.parse(
+              atob(token_url.split('data:application/json;base64,')[1])
+            );
+            _tokens.push({
+              token_id: itemData.data?.data?.items?.[0]?.nft_data?.[0].token_id,
+              name: tokenData?.['name'],
+              image: tokenData?.['image'],
+            });
+            return _tokens;
+          });
+        }
       }
     };
+    if (chainId && init === false) {
+      run();
+      setInit(true);
+    }
+  }, [getTokenMetadata, getTokens, chainId, init]);
 
-    run();
-  }, [getTokenMetadata, getTokens]);
+  const [tokens, setTokens] = React.useState<
+    {
+      token_id: string;
+      name: string;
+      image: string;
+    }[]
+  >([]);
 
-  const dummyCards:Attributes[] = [
+  const dummyCards: Attributes[] = [
     {
       title: 'Card#1',
       owner: 'abhinavr',
