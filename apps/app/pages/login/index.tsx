@@ -12,16 +12,15 @@ import {
 import Link from 'next/link';
 import useAuth from 'apps/app/components/AuthContext';
 import { useMetaMask } from 'metamask-react';
+import Router from 'next/router';
 
 export default function Index() {
-  const [connected, setConnected] = React.useState(false);
   const [newUser, setNewUser] = React.useState(true);
-  const { login, setUserName, user } = useAuth();
+  const { login, setUserName, user, connected } = useAuth();
   const { connect, account } = useMetaMask();
 
   const handleMetamaskConnect = async () => {
     await connect();
-    setConnected(true);
   };
 
   const createSchema = Yup.object().shape({
@@ -35,7 +34,12 @@ export default function Index() {
   }, [account]);
 
   React.useEffect(() => {
-    if (user.name != '') setNewUser(false);
+    if (user.name != '') {
+      setNewUser(false);
+      if (connected) {
+        Router.push('/');
+      }
+    }
   }, [user]);
 
   return (

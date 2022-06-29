@@ -8,6 +8,8 @@ interface AuthContextType {
   login?: () => void;
   logout?: () => void;
   setUserName?: (name: string) => void;
+  connected?: boolean;
+  setConnected?: any; 
 }
 
 const AuthContext = React.createContext<AuthContextType>({} as AuthContextType);
@@ -19,6 +21,7 @@ export function AuthProvider({
 }): JSX.Element {
   const [user, setUser] = React.useState<User>({ name: '', address: '' });
   const { account } = useMetaMask();
+  const [connected, setConnected] = React.useState(false);
 
   const setUserName = async (name: string) => {
     const res = await fetch(`/api/user`, {
@@ -54,10 +57,15 @@ export function AuthProvider({
 
   const logout = () => {
     setUser({ name: '', address: '' });
+    setConnected(false);
   };
 
+  React.useEffect(()=>{
+    if(user.name.length > 3 && user.address.length > 5) setConnected(true)
+  },[user])
+
   const memoedValues = React.useMemo(
-    () => ({ user, login, logout, setUserName }),
+    () => ({ user, login, logout, setUserName, connected, setConnected }),
     [user]
   );
 
