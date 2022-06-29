@@ -9,7 +9,7 @@ interface AuthContextType {
   logout?: () => void;
   setUserName?: (name: string) => void;
   connected?: boolean;
-  setConnected?: any; 
+  setConnected?: any;
 }
 
 const AuthContext = React.createContext<AuthContextType>({} as AuthContextType);
@@ -24,12 +24,15 @@ export function AuthProvider({
   const [connected, setConnected] = React.useState(false);
 
   const setUserName = async (name: string) => {
+    const updateUser = user;
     const res = await fetch(`/api/user`, {
       method: 'POST',
       body: JSON.stringify({ address: account, name }),
     });
     if (res.status == 201) {
-      user.name = name;
+      updateUser.name = name;
+      updateUser.address = account;
+      setUser(updateUser);
     } else if (res.status == 400) {
       // exists
     } else {
@@ -48,10 +51,10 @@ export function AuthProvider({
     } else if (res.status == 200) {
       const data = await res.json();
       newUser.name = data.message;
+      newUser.address = account;
     } else {
       // errored out
     }
-    newUser.address = account;
     setUser(newUser);
   };
 
@@ -60,9 +63,9 @@ export function AuthProvider({
     setConnected(false);
   };
 
-  React.useEffect(()=>{
-    if(user.name.length > 3 && user.address.length > 5) setConnected(true)
-  },[user])
+  React.useEffect(() => {
+    if (account && account.length > 5) setConnected(true);
+  }, [account]);
 
   const memoedValues = React.useMemo(
     () => ({ user, login, logout, setUserName, connected, setConnected }),
