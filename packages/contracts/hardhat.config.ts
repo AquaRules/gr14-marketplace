@@ -72,12 +72,7 @@ const config: HardhatUserConfig = {
 		currency: "USD",
 	},
 	etherscan: {
-		apiKey:
-			// {
-			// kovan: process.env.ETHERSCAN_API_KEY as string,
-			// mumbai:
-			process.env.POLYGONSCAN_API_KEY,
-		// },
+		apiKey: process.env.POLYGONSCAN_API_KEY,
 	} as any,
 	namedAccounts: {
 		deployer: {

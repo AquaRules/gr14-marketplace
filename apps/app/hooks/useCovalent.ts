@@ -28,7 +28,28 @@ export const useCovalent = () => {
     nftAddress: string,
     tokenId: string
   ) => {
-    return axios.get(
+    return axios.get<{
+      data: {
+        updated_at: string;
+        items: {
+          nft_data: {
+            token_id: string;
+            external_data: {
+              name: string;
+              description: string;
+              image: string;
+              image_256: string;
+              image_512: string;
+              image_1024: string;
+              animation_url: string;
+              external_url: string;
+              attributes: string;
+              owner: string;
+            };
+          }[];
+        }[];
+      };
+    }>(
       `${baseAPI}/${chainId}/tokens/${nftAddress}/nft_metadata/${tokenId}/${API_KEY}`
     );
   };

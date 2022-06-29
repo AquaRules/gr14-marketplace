@@ -31,7 +31,7 @@ export const CardList: React.FC = () => {
     };
 
     run();
-  }, [getTokens]);
+  }, [getTokenMetadata, getTokens]);
 
   const dummyCards = [
     {
