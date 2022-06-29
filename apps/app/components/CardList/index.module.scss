@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: 4rem;
   margin-bottom: 16rem;
+  .row {
+    @include flex;
+    gap: 2rem;
+  }
   .select {
     @include flex;
     justify-content: space-between;
