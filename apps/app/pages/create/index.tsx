@@ -109,12 +109,14 @@ export default function Index() {
       .args.tokenId.toString();
     const tokenURL =
       'data:application/json;base64,' +
-      Buffer.from(
+      btoa(
         JSON.stringify({
           name: values.name,
           image: values.image,
         })
-      ).toString('base64');
+      );
+
+    console.log({ tokenURL });
 
     await (await NFT.setTokenURIs([tokenId], [tokenURL])).wait();
 
@@ -123,11 +125,6 @@ export default function Index() {
       tokenId: tokenId,
     };
   };
-
-  useEffect(() => {
-    const run = async () => ((window as any).NFT = await getNFT());
-    run();
-  }, [chainId, getNFT]);
 
   return (
     <div className={styles.wrapper}>

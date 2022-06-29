@@ -9,7 +9,7 @@ import {
   FormLabel,
   Input,
 } from '@chakra-ui/react';
-import useAuth from 'apps/app/components/AuthContext';
+import useAuth from '../../components/AuthContext';
 import { useMetaMask } from 'metamask-react';
 import Router from 'next/router';
 
