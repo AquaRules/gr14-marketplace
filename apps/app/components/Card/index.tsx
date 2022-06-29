@@ -5,12 +5,12 @@ import styles from './index.module.scss';
 export type Attributes = {
   title: string;
   image_url: string;
-  type: string;
-  id: number;
-  price: {
-    amount: number;
+  type?: string;
+  id: string;
+  price?: {
+    amount: string;
     chainName: string;
-    chainId: number;
+    chainId: string;
   };
   owner: string;
 };

@@ -31,6 +31,7 @@ export const CardList: React.FC = () => {
           config[parseInt(chainId.toString(), 16).toString()]['NFT'],
           item.token_id
         );
+
         const token_url =
           itemData.data?.data?.items?.[0]?.nft_data?.[0]?.token_url;
         if (token_url) {
@@ -39,9 +40,15 @@ export const CardList: React.FC = () => {
               atob(token_url.split('data:application/json;base64,')[1])
             );
             _tokens.push({
-              token_id: itemData.data?.data?.items?.[0]?.nft_data?.[0].token_id,
-              name: tokenData?.['name'],
-              image: tokenData?.['image'],
+              id: itemData.data?.data?.items?.[0]?.nft_data?.[0].token_id,
+              title: tokenData?.['name'],
+              image_url: tokenData?.['image'],
+              owner: '',
+              price: {
+                amount: 'number',
+                chainName: 'string',
+                chainId: 'number',
+              },
             });
             return _tokens;
           });
@@ -54,33 +61,27 @@ export const CardList: React.FC = () => {
     }
   }, [getTokenMetadata, getTokens, chainId, init]);
 
-  const [tokens, setTokens] = React.useState<
-    {
-      token_id: string;
-      name: string;
-      image: string;
-    }[]
-  >([]);
+  const [tokens, setTokens] = React.useState<Attributes[]>([]);
 
-  const dummyCards: Attributes[] = [
-    {
-      title: 'Card#1',
-      owner: 'aqua',
-      type: 'Comedy',
-      id: 1,
-      price: { chainId: 1, amount: 5.2, chainName: 'ETH' },
-      image_url:
-        'https://64.media.tumblr.com/780e42f226309d1998293cee15814051/tumblr_mubkq9dZhh1rmfvsio1_400.gif',
-    },
-    {
-      title: 'Card#1',
-      owner: 'aqua',
-      type: 'Comedy',
-      id: 2,
-      price: { chainId: 1, amount: 2, chainName: 'ETH' },
-      image_url: 'https://media2.giphy.com/media/G3lxvBMhGu53y/giphy.gif',
-    },
-  ];
+  // const dummyCards: Attributes[] = [
+  //   {
+  //     title: 'Card#1',
+  //     owner: 'abhinavr',
+  //     type: 'Comedy',
+  //     id: 1,
+  //     price: { chainId: 1, amount: 5.2, chainName: 'ETH' },
+  //     image_url:
+  //       'https://64.media.tumblr.com/780e42f226309d1998293cee15814051/tumblr_mubkq9dZhh1rmfvsio1_400.gif',
+  //   },
+  //   {
+  //     title: 'Card#1',
+  //     owner: 'abhinavr',
+  //     type: 'Comedy',
+  //     id: 2,
+  //     price: { chainId: 1, amount: 2, chainName: 'ETH' },
+  //     image_url: 'https://media2.giphy.com/media/G3lxvBMhGu53y/giphy.gif',
+  //   },
+  // ];
 
   return (
     <div className={styles.wrapper}>
@@ -125,7 +126,7 @@ export const CardList: React.FC = () => {
         )}
       </div>
       <div className={styles.cardWrapper}>
-        {dummyCards.map((v, i) => {
+        {tokens.map((v, i) => {
           return <Card key={i} attributes={v} />;
         })}
       </div>
