@@ -16,5 +16,5 @@ const UserRecordSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.models.EmailRecord ||
+export default mongoose.models.UserRecord ||
   mongoose.model('UserRecord', UserRecordSchema);

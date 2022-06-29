@@ -5,7 +5,7 @@ type User = { name: string; address: string };
 
 interface AuthContextType {
   user?: User;
-  login?: () => User;
+  login?: () => void;
   logout?: () => void;
   setUserName?: (name: string) => void;
 }
@@ -18,24 +18,38 @@ export function AuthProvider({
   children: React.ReactNode;
 }): JSX.Element {
   const [user, setUser] = React.useState<User>({ name: '', address: '' });
-  const { connect, account } = useMetaMask();
+  const { account } = useMetaMask();
 
-  const setUserName = (name: string) => (user.name = name);
+  const setUserName = async (name: string) => {
+    const res = await fetch(`/api/user`, {
+      method: 'POST',
+      body: JSON.stringify({ address: account, name }),
+    });
+    if (res.status == 201) {
+      user.name = name;
+    } else if (res.status == 400) {
+      // exists
+    } else {
+      // errored out
+    }
+  };
 
-  const login = () => {
+  const login = async () => {
     const newUser = {
       name: '',
       address: account,
     };
-    connect()
-      .then(() => {
-        newUser.address = account;
-      })
-      .catch(() => {
-        console.log('Error while connecting to metamask.');
-      });
+    const res = await fetch(`/api/user/${account}`);
+    if (res.status == 404) {
+      // user not found
+    } else if (res.status == 200) {
+      const data = await res.json();
+      newUser.name = data.message;
+    } else {
+      // errored out
+    }
+    newUser.address = account;
     setUser(newUser);
-    return newUser;
   };
 
   const logout = () => {

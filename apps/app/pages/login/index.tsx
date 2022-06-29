@@ -11,21 +11,32 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import useAuth from 'apps/app/components/AuthContext';
+import { useMetaMask } from 'metamask-react';
 
 export default function Index() {
   const [connected, setConnected] = React.useState(false);
   const [newUser, setNewUser] = React.useState(true);
-  const { login, setUserName } = useAuth();
+  const { login, setUserName, user } = useAuth();
+  const { connect, account } = useMetaMask();
 
-  const handleMetamaskConnect = () => {
-    const user = login();
-    if (user.address != '') setConnected(true);
-    if (user.name != '') setNewUser(false);
+  const handleMetamaskConnect = async () => {
+    await connect();
+    setConnected(true)
   };
 
   const createSchema = Yup.object().shape({
     name: Yup.string().min(3).max(32).required(),
   });
+
+  React.useEffect(() => {
+    if (account) {
+      login();
+    }
+  }, [account]);
+
+  React.useEffect(() => {
+    if (user.name != '') setNewUser(false);
+  }, [user]);
 
   return (
     <div className={styles.wrapper}>
@@ -37,7 +48,7 @@ export default function Index() {
               initialValues={{ name: '' }}
               validationSchema={createSchema}
               onSubmit={(values) => {
-                setUserName(values.name)
+                setUserName(values.name);
                 setNewUser(false);
               }}
             >

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import dbConnect from '../../lib/mongo';
-import userRecord from '../../models/userRecord';
+import dbConnect from '../../../lib/mongo';
+import userRecord from '../../../models/userRecord';
 
 export type Data = {
   success: boolean;
@@ -13,21 +13,18 @@ export default async function handler(
 ) {
   await dbConnect();
   switch (req.method) {
-    case 'POST':
+    case 'GET':
       try {
-        const { name, address } = JSON.parse(req.body);
-        await userRecord.create({
-          name: name,
-          address: address,
-        });
-        res.status(201).json({
+        const { address } = req.query;
+        const mq = await userRecord.findOne({ address });
+        res.status(200).json({
           success: true,
-          message: 'Successfully created user!',
+          message: mq.name,
         });
       } catch (error: any) {
-        res.status(400).json({
+        res.status(404).json({
           success: false,
-          message: `Error: ${error}`,
+          message: `Not Found! ${error}`,
         });
       }
       break;
