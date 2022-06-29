@@ -1,6 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
 import useAuth from '../AuthContext';
+import { useCovalent } from '../../hooks/useCovalent';
+import Image from 'next/image';
+import React, { useEffect } from 'react';
 import { Card } from '../Card';
 import styles from './index.module.scss';
 
@@ -11,6 +12,28 @@ export const CardList: React.FC = () => {
     { title: 'polygon', url: '/matic.png', color: 'secondary' },
   ];
   const { user } = useAuth();
+  const { getTokens, getTokenMetadata } = useCovalent();
+
+  useEffect(() => {
+    const run = async () => {
+      const data = await getTokens(
+        42,
+        '0x4fdc608B984dF53f9877ee1803327703e69F44E0'
+      );
+      const items = data.data.items;
+      for (let index = 0; index < items.length; index++) {
+        const item = items[index];
+        const itemData = await getTokenMetadata(
+          '42',
+          '0x4fdc608B984dF53f9877ee1803327703e69F44E0',
+          item.token_id
+        );
+        console.log(itemData.data);
+      }
+    };
+
+    run();
+  }, [getTokenMetadata, getTokens]);
 
   const dummyCards = [
     {

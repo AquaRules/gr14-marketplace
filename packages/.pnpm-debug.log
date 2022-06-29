@@ -1,0 +1,3086 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "gr14-marketplace",
+      "version": "0.0.0",
+      "license": "MIT",
+      "scripts": {},
+      "private": true,
+      "devDependencies": {
+        "@nrwl/cli": "14.2.4",
+        "@nrwl/eslint-plugin-nx": "14.2.4",
+        "@nrwl/js": "14.2.4",
+        "@nrwl/linter": "14.2.4",
+        "@nrwl/next": "^14.2.4",
+        "@nrwl/node": "^14.2.4",
+        "@nrwl/react": "14.2.4",
+        "@nrwl/web": "14.2.4",
+        "@nrwl/workspace": "14.2.4",
+        "@testing-library/react": "13.3.0",
+        "@types/node": "16.11.7",
+        "@types/react": "18.0.12",
+        "@types/react-dom": "18.0.5",
+        "@typescript-eslint/eslint-plugin": "~5.24.0",
+        "@typescript-eslint/parser": "~5.24.0",
+        "eslint": "~8.15.0",
+        "eslint-config-next": "12.1.5",
+        "eslint-config-prettier": "8.1.0",
+        "eslint-plugin-import": "2.26.0",
+        "eslint-plugin-jsx-a11y": "6.5.1",
+        "eslint-plugin-react": "7.30.0",
+        "eslint-plugin-react-hooks": "4.5.0",
+        "nx": "14.2.4",
+        "prettier": "^2.6.2",
+        "react-test-renderer": "18.1.0",
+        "sass": "1.43.2",
+        "typescript": "~4.7.2"
+      },
+      "dependencies": {
+        "@nrwl/next": "14.2.4",
+        "core-js": "^3.6.5",
+        "next": "12.1.5",
+        "react": "18.1.0",
+        "react-dom": "18.1.0",
+        "regenerator-runtime": "0.13.7",
+        "tslib": "^2.0.0"
+      }
+    },
+    "prefix": "/Users/CS64/Work/gr14-marketplace"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": true,
+    "storeDir": "/Users/CS64/Library/pnpm/store/v3",
+    "virtualStoreDir": "/Users/CS64/Work/gr14-marketplace/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/CS64/Work/gr14-marketplace",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/eslint-plugin-nx/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/eslint-plugin-nx",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "5 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/cli/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/cli",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/linter/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/linter",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "7 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/node/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/node",
+      "rawSpec": "^14.2.4"
+    }
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/react/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/react",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "9 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/js/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/js",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "10 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/next/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/next",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "11 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/workspace/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/workspace",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "12 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@nrwl/web/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@nrwl/web",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "13 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@testing-library/react/13.3.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@testing-library/react",
+      "rawSpec": "13.3.0"
+    }
+  },
+  "14 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/node/16.11.7",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/node",
+      "rawSpec": "16.11.7"
+    }
+  },
+  "15 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/react-dom/18.0.5",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react-dom",
+      "rawSpec": "18.0.5"
+    }
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/react/18.0.12",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react",
+      "rawSpec": "18.0.12"
+    }
+  },
+  "17 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@typescript-eslint/parser/5.24.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@typescript-eslint/parser",
+      "rawSpec": "~5.24.0"
+    }
+  },
+  "18 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@typescript-eslint/eslint-plugin/5.24.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@typescript-eslint/eslint-plugin",
+      "rawSpec": "~5.24.0"
+    }
+  },
+  "19 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-prettier/8.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-prettier",
+      "rawSpec": "8.1.0"
+    }
+  },
+  "20 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-import/2.26.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-import",
+      "rawSpec": "2.26.0"
+    }
+  },
+  "21 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-next/12.1.5",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-next",
+      "rawSpec": "12.1.5"
+    }
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-react/7.30.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-react",
+      "rawSpec": "7.30.0"
+    }
+  },
+  "23 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-react-hooks/4.5.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-react-hooks",
+      "rawSpec": "4.5.0"
+    }
+  },
+  "24 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-jsx-a11y/6.5.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-jsx-a11y",
+      "rawSpec": "6.5.1"
+    }
+  },
+  "25 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier/2.6.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "prettier",
+      "rawSpec": "^2.6.2"
+    }
+  },
+  "26 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react-test-renderer/18.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-test-renderer",
+      "rawSpec": "18.1.0"
+    }
+  },
+  "27 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/nx/14.2.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "nx",
+      "rawSpec": "14.2.4"
+    }
+  },
+  "28 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/sass/1.43.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "sass",
+      "rawSpec": "1.43.2"
+    }
+  },
+  "29 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/core-js/3.22.8",
+    "wanted": {
+      "dependentId": ".",
+      "name": "core-js",
+      "rawSpec": "^3.6.5"
+    }
+  },
+  "30 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react/18.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react",
+      "rawSpec": "18.1.0"
+    }
+  },
+  "31 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/typescript/4.7.3",
+    "wanted": {
+      "dependentId": ".",
+      "name": "typescript",
+      "rawSpec": "~4.7.2"
+    }
+  },
+  "32 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react-dom/18.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-dom",
+      "rawSpec": "18.1.0"
+    }
+  },
+  "33 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/regenerator-runtime/0.13.7",
+    "wanted": {
+      "dependentId": ".",
+      "name": "regenerator-runtime",
+      "rawSpec": "0.13.7"
+    }
+  },
+  "34 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tslib/2.4.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "tslib",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "35 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/eslint-plugin-nx/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "36 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/eslint-plugin-nx/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "37 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/cli/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "38 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/cli/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "39 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/linter/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "40 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/linter/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "41 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/next/12.1.5",
+    "wanted": {
+      "dependentId": ".",
+      "name": "next",
+      "rawSpec": "12.1.5"
+    }
+  },
+  "42 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "43 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/node/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "44 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/node/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "45 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/js/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "46 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/js/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "47 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/react/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "48 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/react/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "49 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/next/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "50 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/next/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "51 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@testing-library/react/13.3.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "52 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@testing-library/react/13.3.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "53 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/workspace/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "54 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/workspace/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "55 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react-dom/18.0.5",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "56 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react-dom/18.0.5",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "57 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@typescript-eslint/parser/5.24.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "58 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@typescript-eslint/parser/5.24.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "59 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/web/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "60 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@nrwl/web/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "61 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/16.11.7",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "62 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/16.11.7",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "63 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react/18.0.12",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "64 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react/18.0.12",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "65 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.1.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "66 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.1.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "67 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-next/12.1.5",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "68 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-next/12.1.5",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "69 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@typescript-eslint/eslint-plugin/5.24.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "70 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@typescript-eslint/eslint-plugin/5.24.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "71 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-import/2.26.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "72 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-import/2.26.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "73 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-react-hooks/4.5.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "74 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-react-hooks/4.5.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "75 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-test-renderer/18.1.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "76 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-test-renderer/18.1.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "77 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-react/7.30.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "78 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-react/7.30.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "79 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-jsx-a11y/6.5.1",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "80 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-jsx-a11y/6.5.1",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "81 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/nx/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "82 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/nx/14.2.4",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "83 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react/18.1.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "84 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react/18.1.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "85 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.6.2",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "86 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.6.2",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "87 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/sass/1.43.2",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "88 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/sass/1.43.2",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "89 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/regenerator-runtime/0.13.7",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "90 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/regenerator-runtime/0.13.7",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "91 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-dom/18.1.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "92 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-dom/18.1.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "93 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/typescript/4.7.3",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "94 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/typescript/4.7.3",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "95 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.4.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "96 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.4.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "97 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/core-js/3.22.8",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "found_in_store"
+  },
+  "98 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/core-js/3.22.8",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "99 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "size": 6700107,
+    "status": "started"
+  },
+  "100 debug pnpm:fetching-progress": {
+    "downloaded": 1369,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "101 debug pnpm:fetching-progress": {
+    "downloaded": 2738,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "102 debug pnpm:fetching-progress": {
+    "downloaded": 4107,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "103 debug pnpm:fetching-progress": {
+    "downloaded": 5476,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "104 debug pnpm:fetching-progress": {
+    "downloaded": 6845,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "105 debug pnpm:fetching-progress": {
+    "downloaded": 8214,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "106 debug pnpm:fetching-progress": {
+    "downloaded": 9583,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "107 debug pnpm:fetching-progress": {
+    "downloaded": 10952,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "108 debug pnpm:fetching-progress": {
+    "downloaded": 12321,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "109 debug pnpm:fetching-progress": {
+    "downloaded": 13690,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "110 debug pnpm:fetching-progress": {
+    "downloaded": 15059,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "111 debug pnpm:fetching-progress": {
+    "downloaded": 16428,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "112 debug pnpm:fetching-progress": {
+    "downloaded": 17797,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "113 debug pnpm:fetching-progress": {
+    "downloaded": 19166,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "114 debug pnpm:fetching-progress": {
+    "downloaded": 20535,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "115 debug pnpm:fetching-progress": {
+    "downloaded": 21904,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "116 debug pnpm:fetching-progress": {
+    "downloaded": 23273,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "117 debug pnpm:fetching-progress": {
+    "downloaded": 24642,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "118 debug pnpm:fetching-progress": {
+    "downloaded": 26011,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "119 debug pnpm:fetching-progress": {
+    "downloaded": 27380,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "120 debug pnpm:fetching-progress": {
+    "downloaded": 28749,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "121 debug pnpm:fetching-progress": {
+    "downloaded": 30118,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "122 debug pnpm:fetching-progress": {
+    "downloaded": 31487,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "123 debug pnpm:fetching-progress": {
+    "downloaded": 32768,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "124 debug pnpm:fetching-progress": {
+    "downloaded": 34137,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "125 debug pnpm:fetching-progress": {
+    "downloaded": 35506,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "126 debug pnpm:fetching-progress": {
+    "downloaded": 36875,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "127 debug pnpm:fetching-progress": {
+    "downloaded": 38244,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "128 debug pnpm:fetching-progress": {
+    "downloaded": 39613,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "129 debug pnpm:fetching-progress": {
+    "downloaded": 40982,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "130 debug pnpm:fetching-progress": {
+    "downloaded": 42351,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "131 debug pnpm:fetching-progress": {
+    "downloaded": 43720,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "132 debug pnpm:fetching-progress": {
+    "downloaded": 45089,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "133 debug pnpm:fetching-progress": {
+    "downloaded": 46458,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "134 debug pnpm:fetching-progress": {
+    "downloaded": 47827,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "135 debug pnpm:fetching-progress": {
+    "downloaded": 49196,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "136 debug pnpm:fetching-progress": {
+    "downloaded": 50565,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "137 debug pnpm:fetching-progress": {
+    "downloaded": 51934,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "138 debug pnpm:fetching-progress": {
+    "downloaded": 53303,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "139 debug pnpm:fetching-progress": {
+    "downloaded": 54672,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "140 debug pnpm:fetching-progress": {
+    "downloaded": 58901,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "141 debug pnpm:fetching-progress": {
+    "downloaded": 63130,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "142 debug pnpm:fetching-progress": {
+    "downloaded": 65536,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "143 debug pnpm:fetching-progress": {
+    "downloaded": 69765,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "144 debug pnpm:fetching-progress": {
+    "downloaded": 73994,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "145 debug pnpm:fetching-progress": {
+    "downloaded": 78223,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "146 debug pnpm:fetching-progress": {
+    "downloaded": 82452,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "147 debug pnpm:fetching-progress": {
+    "downloaded": 86681,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "148 debug pnpm:fetching-progress": {
+    "downloaded": 90910,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "149 debug pnpm:fetching-progress": {
+    "downloaded": 95139,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "150 debug pnpm:fetching-progress": {
+    "downloaded": 98304,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "151 debug pnpm:fetching-progress": {
+    "downloaded": 102533,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "152 debug pnpm:fetching-progress": {
+    "downloaded": 106762,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "153 debug pnpm:fetching-progress": {
+    "downloaded": 110991,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "154 debug pnpm:fetching-progress": {
+    "downloaded": 115220,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "155 debug pnpm:fetching-progress": {
+    "downloaded": 119449,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "156 debug pnpm:fetching-progress": {
+    "downloaded": 123678,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "157 debug pnpm:fetching-progress": {
+    "downloaded": 127907,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "158 debug pnpm:fetching-progress": {
+    "downloaded": 131072,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "159 debug pnpm:fetching-progress": {
+    "downloaded": 135301,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "160 debug pnpm:fetching-progress": {
+    "downloaded": 139530,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "161 debug pnpm:fetching-progress": {
+    "downloaded": 143759,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "162 debug pnpm:fetching-progress": {
+    "downloaded": 147988,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "163 debug pnpm:fetching-progress": {
+    "downloaded": 152217,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "164 debug pnpm:fetching-progress": {
+    "downloaded": 156446,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "165 debug pnpm:fetching-progress": {
+    "downloaded": 160675,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "166 debug pnpm:fetching-progress": {
+    "downloaded": 163840,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "167 debug pnpm:fetching-progress": {
+    "downloaded": 168069,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "168 debug pnpm:fetching-progress": {
+    "downloaded": 172298,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "169 debug pnpm:fetching-progress": {
+    "downloaded": 176527,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "170 debug pnpm:fetching-progress": {
+    "downloaded": 180756,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "171 debug pnpm:fetching-progress": {
+    "downloaded": 184985,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "172 debug pnpm:fetching-progress": {
+    "downloaded": 189214,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "173 debug pnpm:fetching-progress": {
+    "downloaded": 193443,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "174 debug pnpm:fetching-progress": {
+    "downloaded": 196608,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "175 debug pnpm:fetching-progress": {
+    "downloaded": 200837,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "176 debug pnpm:fetching-progress": {
+    "downloaded": 205066,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "177 debug pnpm:fetching-progress": {
+    "downloaded": 209295,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "178 debug pnpm:fetching-progress": {
+    "downloaded": 213524,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "179 debug pnpm:fetching-progress": {
+    "downloaded": 217753,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "180 debug pnpm:fetching-progress": {
+    "downloaded": 229376,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "181 debug pnpm:fetching-progress": {
+    "downloaded": 234137,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "182 debug pnpm:fetching-progress": {
+    "downloaded": 250521,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "183 debug pnpm:fetching-progress": {
+    "downloaded": 262144,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "184 debug pnpm:fetching-progress": {
+    "downloaded": 278528,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "185 debug pnpm:fetching-progress": {
+    "downloaded": 294912,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "186 debug pnpm:fetching-progress": {
+    "downloaded": 311296,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "187 debug pnpm:fetching-progress": {
+    "downloaded": 327680,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "188 debug pnpm:fetching-progress": {
+    "downloaded": 344064,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "189 debug pnpm:fetching-progress": {
+    "downloaded": 360448,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "190 debug pnpm:fetching-progress": {
+    "downloaded": 376832,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "191 debug pnpm:fetching-progress": {
+    "downloaded": 393216,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "192 debug pnpm:fetching-progress": {
+    "downloaded": 409600,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "193 debug pnpm:fetching-progress": {
+    "downloaded": 425984,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "194 debug pnpm:fetching-progress": {
+    "downloaded": 442368,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "195 debug pnpm:fetching-progress": {
+    "downloaded": 458752,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "196 debug pnpm:fetching-progress": {
+    "downloaded": 475136,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "197 debug pnpm:fetching-progress": {
+    "downloaded": 491520,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "198 debug pnpm:fetching-progress": {
+    "downloaded": 507904,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "199 debug pnpm:fetching-progress": {
+    "downloaded": 524288,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "200 debug pnpm:fetching-progress": {
+    "downloaded": 540672,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "201 debug pnpm:fetching-progress": {
+    "downloaded": 557056,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "202 debug pnpm:fetching-progress": {
+    "downloaded": 573440,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "203 debug pnpm:fetching-progress": {
+    "downloaded": 589824,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "204 debug pnpm:fetching-progress": {
+    "downloaded": 606208,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "205 debug pnpm:fetching-progress": {
+    "downloaded": 622592,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "206 debug pnpm:fetching-progress": {
+    "downloaded": 638976,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "207 debug pnpm:fetching-progress": {
+    "downloaded": 655360,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "208 debug pnpm:fetching-progress": {
+    "downloaded": 671744,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "209 debug pnpm:fetching-progress": {
+    "downloaded": 688128,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "210 debug pnpm:fetching-progress": {
+    "downloaded": 704512,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "211 debug pnpm:fetching-progress": {
+    "downloaded": 720896,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "212 debug pnpm:fetching-progress": {
+    "downloaded": 737280,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "213 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint/8.15.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint",
+      "rawSpec": "~8.15.0"
+    }
+  },
+  "214 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/8.15.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "resolved"
+  },
+  "215 debug pnpm:fetching-progress": {
+    "downloaded": 753664,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "216 debug pnpm:fetching-progress": {
+    "downloaded": 770048,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "217 debug pnpm:fetching-progress": {
+    "downloaded": 786432,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "218 debug pnpm:fetching-progress": {
+    "downloaded": 802816,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "219 debug pnpm:fetching-progress": {
+    "downloaded": 819200,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "220 debug pnpm:fetching-progress": {
+    "downloaded": 835584,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "221 debug pnpm:fetching-progress": {
+    "downloaded": 851968,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "222 debug pnpm:fetching-progress": {
+    "downloaded": 868352,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "223 debug pnpm:fetching-progress": {
+    "downloaded": 884736,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "224 debug pnpm:fetching-progress": {
+    "downloaded": 901120,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "225 debug pnpm:fetching-progress": {
+    "downloaded": 917504,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "226 debug pnpm:fetching-progress": {
+    "downloaded": 933888,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "227 debug pnpm:fetching-progress": {
+    "downloaded": 950272,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "228 debug pnpm:fetching-progress": {
+    "downloaded": 966656,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "229 debug pnpm:fetching-progress": {
+    "downloaded": 983040,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "230 debug pnpm:fetching-progress": {
+    "downloaded": 999424,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "231 debug pnpm:fetching-progress": {
+    "downloaded": 1015808,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "232 debug pnpm:fetching-progress": {
+    "downloaded": 1032192,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "233 debug pnpm:fetching-progress": {
+    "downloaded": 1048576,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "234 debug pnpm:fetching-progress": {
+    "downloaded": 1064960,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "235 debug pnpm:fetching-progress": {
+    "downloaded": 1081344,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "236 debug pnpm:fetching-progress": {
+    "downloaded": 1097728,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "237 debug pnpm:fetching-progress": {
+    "downloaded": 1114112,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "238 debug pnpm:fetching-progress": {
+    "downloaded": 1130496,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "239 debug pnpm:fetching-progress": {
+    "downloaded": 1146880,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "240 debug pnpm:fetching-progress": {
+    "downloaded": 1163264,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "241 debug pnpm:fetching-progress": {
+    "downloaded": 1179648,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "242 debug pnpm:fetching-progress": {
+    "downloaded": 1196032,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "243 debug pnpm:fetching-progress": {
+    "downloaded": 1212416,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "244 debug pnpm:fetching-progress": {
+    "downloaded": 1228800,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "245 debug pnpm:fetching-progress": {
+    "downloaded": 1245184,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "246 debug pnpm:fetching-progress": {
+    "downloaded": 1261568,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "247 debug pnpm:fetching-progress": {
+    "downloaded": 1277952,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "248 debug pnpm:fetching-progress": {
+    "downloaded": 1294336,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "249 debug pnpm:fetching-progress": {
+    "downloaded": 1310720,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "250 debug pnpm:fetching-progress": {
+    "downloaded": 1327104,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "251 debug pnpm:fetching-progress": {
+    "downloaded": 1343488,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "252 debug pnpm:fetching-progress": {
+    "downloaded": 1359872,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "253 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/eslint/8.15.0",
+    "size": 501168,
+    "status": "started"
+  },
+  "254 debug pnpm:fetching-progress": {
+    "downloaded": 1376256,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "255 debug pnpm:fetching-progress": {
+    "downloaded": 1392640,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "256 debug pnpm:fetching-progress": {
+    "downloaded": 1409024,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "257 debug pnpm:fetching-progress": {
+    "downloaded": 1425408,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "258 debug pnpm:fetching-progress": {
+    "downloaded": 1441792,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "259 debug pnpm:fetching-progress": {
+    "downloaded": 1458176,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "260 debug pnpm:fetching-progress": {
+    "downloaded": 1474560,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "261 debug pnpm:fetching-progress": {
+    "downloaded": 1490944,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "262 debug pnpm:fetching-progress": {
+    "downloaded": 1507328,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "263 debug pnpm:fetching-progress": {
+    "downloaded": 1523712,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "264 debug pnpm:fetching-progress": {
+    "downloaded": 1540096,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "265 debug pnpm:fetching-progress": {
+    "downloaded": 1556480,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "266 debug pnpm:fetching-progress": {
+    "downloaded": 1572864,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "267 debug pnpm:fetching-progress": {
+    "downloaded": 1589248,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "268 debug pnpm:fetching-progress": {
+    "downloaded": 1605632,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "269 debug pnpm:fetching-progress": {
+    "downloaded": 1622016,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "270 debug pnpm:fetching-progress": {
+    "downloaded": 1638400,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "271 debug pnpm:fetching-progress": {
+    "downloaded": 1654784,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "272 debug pnpm:fetching-progress": {
+    "downloaded": 1671168,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "273 debug pnpm:fetching-progress": {
+    "downloaded": 1687552,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "274 debug pnpm:fetching-progress": {
+    "downloaded": 1703936,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "275 debug pnpm:fetching-progress": {
+    "downloaded": 1720320,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "276 debug pnpm:fetching-progress": {
+    "downloaded": 1736704,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "277 debug pnpm:fetching-progress": {
+    "downloaded": 1753088,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "278 debug pnpm:fetching-progress": {
+    "downloaded": 1769472,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "279 debug pnpm:fetching-progress": {
+    "downloaded": 1785856,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "280 debug pnpm:fetching-progress": {
+    "downloaded": 1802240,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "281 debug pnpm:fetching-progress": {
+    "downloaded": 1818624,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "282 debug pnpm:fetching-progress": {
+    "downloaded": 1835008,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "283 debug pnpm:fetching-progress": {
+    "downloaded": 1851392,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "284 debug pnpm:fetching-progress": {
+    "downloaded": 1867776,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "285 debug pnpm:fetching-progress": {
+    "downloaded": 1884160,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "286 debug pnpm:fetching-progress": {
+    "downloaded": 1900544,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "287 debug pnpm:fetching-progress": {
+    "downloaded": 1916928,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "288 debug pnpm:fetching-progress": {
+    "downloaded": 1933312,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "289 debug pnpm:fetching-progress": {
+    "downloaded": 1949696,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "290 debug pnpm:fetching-progress": {
+    "downloaded": 1966080,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "291 debug pnpm:fetching-progress": {
+    "downloaded": 1982464,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "292 debug pnpm:fetching-progress": {
+    "downloaded": 1998848,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "293 debug pnpm:fetching-progress": {
+    "downloaded": 2015232,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "294 debug pnpm:fetching-progress": {
+    "downloaded": 2031616,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "295 debug pnpm:fetching-progress": {
+    "downloaded": 2048000,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "296 debug pnpm:fetching-progress": {
+    "downloaded": 2064384,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "297 debug pnpm:fetching-progress": {
+    "downloaded": 2080768,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "298 debug pnpm:fetching-progress": {
+    "downloaded": 2097152,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "299 debug pnpm:fetching-progress": {
+    "downloaded": 2113536,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "300 debug pnpm:fetching-progress": {
+    "downloaded": 2129920,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "301 debug pnpm:fetching-progress": {
+    "downloaded": 2146304,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "302 debug pnpm:fetching-progress": {
+    "downloaded": 2162688,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "303 debug pnpm:fetching-progress": {
+    "downloaded": 2179072,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "304 debug pnpm:fetching-progress": {
+    "downloaded": 2195456,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "305 debug pnpm:fetching-progress": {
+    "downloaded": 2211840,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "306 debug pnpm:fetching-progress": {
+    "downloaded": 2228224,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "307 debug pnpm:fetching-progress": {
+    "downloaded": 2244608,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "308 debug pnpm:fetching-progress": {
+    "downloaded": 2260992,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "309 debug pnpm:fetching-progress": {
+    "downloaded": 2277376,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "310 debug pnpm:fetching-progress": {
+    "downloaded": 2293760,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "311 debug pnpm:fetching-progress": {
+    "downloaded": 2310144,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "312 debug pnpm:fetching-progress": {
+    "downloaded": 2326528,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "313 debug pnpm:fetching-progress": {
+    "downloaded": 2342912,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "314 debug pnpm:fetching-progress": {
+    "downloaded": 2359296,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "315 debug pnpm:fetching-progress": {
+    "downloaded": 2375680,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "316 debug pnpm:fetching-progress": {
+    "downloaded": 2392064,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "317 debug pnpm:fetching-progress": {
+    "downloaded": 2408448,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "318 debug pnpm:fetching-progress": {
+    "downloaded": 2424832,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "319 debug pnpm:fetching-progress": {
+    "downloaded": 2441216,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "320 debug pnpm:fetching-progress": {
+    "downloaded": 2457600,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "321 debug pnpm:fetching-progress": {
+    "downloaded": 2473984,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "322 debug pnpm:fetching-progress": {
+    "downloaded": 2490368,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "323 debug pnpm:fetching-progress": {
+    "downloaded": 2506752,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "324 debug pnpm:fetching-progress": {
+    "downloaded": 2523136,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "325 debug pnpm:fetching-progress": {
+    "downloaded": 2539520,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "326 debug pnpm:fetching-progress": {
+    "downloaded": 2555904,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "327 debug pnpm:fetching-progress": {
+    "downloaded": 2572288,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "328 debug pnpm:fetching-progress": {
+    "downloaded": 2588672,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "329 debug pnpm:fetching-progress": {
+    "downloaded": 2605056,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "330 debug pnpm:fetching-progress": {
+    "downloaded": 2619700,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "331 debug pnpm:fetching-progress": {
+    "downloaded": 2636084,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "332 debug pnpm:fetching-progress": {
+    "downloaded": 2652468,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "333 debug pnpm:fetching-progress": {
+    "downloaded": 2668852,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "334 debug pnpm:fetching-progress": {
+    "downloaded": 2685236,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "335 debug pnpm:fetching-progress": {
+    "downloaded": 2701620,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "336 debug pnpm:fetching-progress": {
+    "downloaded": 2718004,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "337 debug pnpm:fetching-progress": {
+    "downloaded": 2734388,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "338 debug pnpm:fetching-progress": {
+    "downloaded": 2750772,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "339 debug pnpm:fetching-progress": {
+    "downloaded": 2767156,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "340 debug pnpm:fetching-progress": {
+    "downloaded": 2783540,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "341 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/8.15.0",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "fetched"
+  },
+  "342 debug pnpm:fetching-progress": {
+    "downloaded": 2799924,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "343 debug pnpm:fetching-progress": {
+    "downloaded": 2816308,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "344 debug pnpm:fetching-progress": {
+    "downloaded": 2832692,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "345 debug pnpm:fetching-progress": {
+    "downloaded": 2849076,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "346 debug pnpm:fetching-progress": {
+    "downloaded": 2865460,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "347 debug pnpm:fetching-progress": {
+    "downloaded": 2881844,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "348 debug pnpm:fetching-progress": {
+    "downloaded": 2898228,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "349 debug pnpm:fetching-progress": {
+    "downloaded": 2914612,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "350 debug pnpm:fetching-progress": {
+    "downloaded": 2930996,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "351 debug pnpm:fetching-progress": {
+    "downloaded": 2947380,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "352 debug pnpm:fetching-progress": {
+    "downloaded": 2963764,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "353 debug pnpm:fetching-progress": {
+    "downloaded": 2980148,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "354 debug pnpm:fetching-progress": {
+    "downloaded": 2996532,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "355 debug pnpm:fetching-progress": {
+    "downloaded": 3012916,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "356 debug pnpm:fetching-progress": {
+    "downloaded": 3029300,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "357 debug pnpm:fetching-progress": {
+    "downloaded": 3045684,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "358 debug pnpm:fetching-progress": {
+    "downloaded": 3062068,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "359 debug pnpm:fetching-progress": {
+    "downloaded": 3078452,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "360 debug pnpm:fetching-progress": {
+    "downloaded": 3094836,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "361 debug pnpm:fetching-progress": {
+    "downloaded": 3111220,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "362 debug pnpm:fetching-progress": {
+    "downloaded": 3127604,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "363 debug pnpm:fetching-progress": {
+    "downloaded": 3143988,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "364 debug pnpm:fetching-progress": {
+    "downloaded": 3160372,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "365 debug pnpm:fetching-progress": {
+    "downloaded": 3176756,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "366 debug pnpm:fetching-progress": {
+    "downloaded": 3193140,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "367 debug pnpm:fetching-progress": {
+    "downloaded": 3209524,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "368 debug pnpm:fetching-progress": {
+    "downloaded": 3225908,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "369 debug pnpm:fetching-progress": {
+    "downloaded": 3242292,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "370 debug pnpm:fetching-progress": {
+    "downloaded": 3258676,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "371 debug pnpm:fetching-progress": {
+    "downloaded": 3275060,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "372 debug pnpm:fetching-progress": {
+    "downloaded": 3291444,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "373 debug pnpm:fetching-progress": {
+    "downloaded": 3307828,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "374 debug pnpm:fetching-progress": {
+    "downloaded": 3324212,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "375 debug pnpm:fetching-progress": {
+    "downloaded": 3340596,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "376 debug pnpm:fetching-progress": {
+    "downloaded": 3356980,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "377 debug pnpm:fetching-progress": {
+    "downloaded": 3373364,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "378 debug pnpm:fetching-progress": {
+    "downloaded": 3389748,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "379 debug pnpm:fetching-progress": {
+    "downloaded": 3406132,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "380 debug pnpm:fetching-progress": {
+    "downloaded": 3422516,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "381 debug pnpm:fetching-progress": {
+    "downloaded": 3438900,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "382 debug pnpm:fetching-progress": {
+    "downloaded": 3455284,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "383 debug pnpm:fetching-progress": {
+    "downloaded": 3471668,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "384 debug pnpm:fetching-progress": {
+    "downloaded": 3488052,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "385 debug pnpm:fetching-progress": {
+    "downloaded": 3504436,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "386 debug pnpm:fetching-progress": {
+    "downloaded": 3520820,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "387 debug pnpm:fetching-progress": {
+    "downloaded": 3537204,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "388 debug pnpm:fetching-progress": {
+    "downloaded": 3553588,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "389 debug pnpm:fetching-progress": {
+    "downloaded": 3569972,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "390 debug pnpm:fetching-progress": {
+    "downloaded": 3586356,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "391 debug pnpm:fetching-progress": {
+    "downloaded": 3602740,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "392 debug pnpm:fetching-progress": {
+    "downloaded": 3619124,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "393 debug pnpm:fetching-progress": {
+    "downloaded": 3635508,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "394 debug pnpm:fetching-progress": {
+    "downloaded": 3651892,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "395 debug pnpm:fetching-progress": {
+    "downloaded": 3668276,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "396 debug pnpm:fetching-progress": {
+    "downloaded": 3684660,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "397 debug pnpm:fetching-progress": {
+    "downloaded": 3701044,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "398 debug pnpm:fetching-progress": {
+    "downloaded": 3717428,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "399 debug pnpm:fetching-progress": {
+    "downloaded": 3733812,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "400 debug pnpm:fetching-progress": {
+    "downloaded": 3750196,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "401 debug pnpm:fetching-progress": {
+    "downloaded": 3766580,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "402 debug pnpm:fetching-progress": {
+    "downloaded": 3782964,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "403 debug pnpm:fetching-progress": {
+    "downloaded": 3799348,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "404 debug pnpm:fetching-progress": {
+    "downloaded": 3815732,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "405 debug pnpm:fetching-progress": {
+    "downloaded": 3832116,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "406 debug pnpm:fetching-progress": {
+    "downloaded": 3848500,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "407 debug pnpm:fetching-progress": {
+    "downloaded": 3864884,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "408 debug pnpm:fetching-progress": {
+    "downloaded": 3881268,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "409 debug pnpm:fetching-progress": {
+    "downloaded": 3897652,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "410 debug pnpm:fetching-progress": {
+    "downloaded": 3914036,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "411 debug pnpm:fetching-progress": {
+    "downloaded": 3930420,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "412 debug pnpm:fetching-progress": {
+    "downloaded": 3946804,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "413 debug pnpm:fetching-progress": {
+    "downloaded": 3963188,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "414 debug pnpm:fetching-progress": {
+    "downloaded": 3979572,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "415 debug pnpm:fetching-progress": {
+    "downloaded": 3995956,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "416 debug pnpm:fetching-progress": {
+    "downloaded": 4012340,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "417 debug pnpm:fetching-progress": {
+    "downloaded": 4028724,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "418 debug pnpm:fetching-progress": {
+    "downloaded": 4045108,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "419 debug pnpm:fetching-progress": {
+    "downloaded": 4061492,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "420 debug pnpm:fetching-progress": {
+    "downloaded": 4077876,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "421 debug pnpm:fetching-progress": {
+    "downloaded": 4094260,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "422 debug pnpm:fetching-progress": {
+    "downloaded": 4110644,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "423 debug pnpm:fetching-progress": {
+    "downloaded": 4127028,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "424 debug pnpm:fetching-progress": {
+    "downloaded": 4143412,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "425 debug pnpm:fetching-progress": {
+    "downloaded": 4159796,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "426 debug pnpm:fetching-progress": {
+    "downloaded": 4176180,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "427 debug pnpm:fetching-progress": {
+    "downloaded": 4192564,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "428 debug pnpm:fetching-progress": {
+    "downloaded": 4208948,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "429 debug pnpm:fetching-progress": {
+    "downloaded": 4225332,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "430 debug pnpm:fetching-progress": {
+    "downloaded": 4241716,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "431 debug pnpm:fetching-progress": {
+    "downloaded": 4258100,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "432 debug pnpm:fetching-progress": {
+    "downloaded": 4274484,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "433 debug pnpm:fetching-progress": {
+    "downloaded": 4290868,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "434 debug pnpm:fetching-progress": {
+    "downloaded": 4307252,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "435 debug pnpm:fetching-progress": {
+    "downloaded": 4323636,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "436 debug pnpm:fetching-progress": {
+    "downloaded": 4340020,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "437 debug pnpm:fetching-progress": {
+    "downloaded": 4356404,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "438 debug pnpm:fetching-progress": {
+    "downloaded": 4372788,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "439 debug pnpm:fetching-progress": {
+    "downloaded": 4389172,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "440 debug pnpm:fetching-progress": {
+    "downloaded": 4405556,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "441 debug pnpm:fetching-progress": {
+    "downloaded": 4421940,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "442 debug pnpm:fetching-progress": {
+    "downloaded": 4438324,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "443 debug pnpm:fetching-progress": {
+    "downloaded": 4454708,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "444 debug pnpm:fetching-progress": {
+    "downloaded": 4471092,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "445 debug pnpm:fetching-progress": {
+    "downloaded": 4487476,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "446 debug pnpm:fetching-progress": {
+    "downloaded": 4503860,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "447 debug pnpm:fetching-progress": {
+    "downloaded": 4520244,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "448 debug pnpm:fetching-progress": {
+    "downloaded": 4536628,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "449 debug pnpm:fetching-progress": {
+    "downloaded": 4553012,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "450 debug pnpm:fetching-progress": {
+    "downloaded": 4569396,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "451 debug pnpm:fetching-progress": {
+    "downloaded": 4585780,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "452 debug pnpm:fetching-progress": {
+    "downloaded": 4602164,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "453 debug pnpm:fetching-progress": {
+    "downloaded": 4618548,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "454 debug pnpm:fetching-progress": {
+    "downloaded": 4634932,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "455 debug pnpm:fetching-progress": {
+    "downloaded": 4651316,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "456 debug pnpm:fetching-progress": {
+    "downloaded": 4667700,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "457 debug pnpm:fetching-progress": {
+    "downloaded": 4684084,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "458 debug pnpm:fetching-progress": {
+    "downloaded": 4700468,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "459 debug pnpm:fetching-progress": {
+    "downloaded": 4716852,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "460 debug pnpm:fetching-progress": {
+    "downloaded": 4733236,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "461 debug pnpm:fetching-progress": {
+    "downloaded": 4749620,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "462 debug pnpm:fetching-progress": {
+    "downloaded": 4766004,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "463 debug pnpm:fetching-progress": {
+    "downloaded": 4782388,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "464 debug pnpm:fetching-progress": {
+    "downloaded": 4798772,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "465 debug pnpm:fetching-progress": {
+    "downloaded": 4802868,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "466 debug pnpm:fetching-progress": {
+    "downloaded": 4819252,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "467 debug pnpm:fetching-progress": {
+    "downloaded": 4835636,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "468 debug pnpm:fetching-progress": {
+    "downloaded": 4852020,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "469 debug pnpm:fetching-progress": {
+    "downloaded": 4868404,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "470 debug pnpm:fetching-progress": {
+    "downloaded": 4884788,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "471 debug pnpm:fetching-progress": {
+    "downloaded": 4901172,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "472 debug pnpm:fetching-progress": {
+    "downloaded": 4917556,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "473 debug pnpm:fetching-progress": {
+    "downloaded": 4933940,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "474 debug pnpm:fetching-progress": {
+    "downloaded": 4950324,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "475 debug pnpm:fetching-progress": {
+    "downloaded": 4966708,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "476 debug pnpm:fetching-progress": {
+    "downloaded": 4983092,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "477 debug pnpm:fetching-progress": {
+    "downloaded": 4999476,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "478 debug pnpm:fetching-progress": {
+    "downloaded": 5015860,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "479 debug pnpm:fetching-progress": {
+    "downloaded": 5024052,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "480 debug pnpm:fetching-progress": {
+    "downloaded": 5040436,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "481 debug pnpm:fetching-progress": {
+    "downloaded": 5056820,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "482 debug pnpm:fetching-progress": {
+    "downloaded": 5073204,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "483 debug pnpm:fetching-progress": {
+    "downloaded": 5089588,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "484 debug pnpm:fetching-progress": {
+    "downloaded": 5105972,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "485 debug pnpm:fetching-progress": {
+    "downloaded": 5122356,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "486 debug pnpm:fetching-progress": {
+    "downloaded": 5138740,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "487 debug pnpm:fetching-progress": {
+    "downloaded": 5155124,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "488 debug pnpm:fetching-progress": {
+    "downloaded": 5171508,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "489 debug pnpm:fetching-progress": {
+    "downloaded": 5187892,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "490 debug pnpm:fetching-progress": {
+    "downloaded": 5204276,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "491 debug pnpm:fetching-progress": {
+    "downloaded": 5220660,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "492 debug pnpm:fetching-progress": {
+    "downloaded": 5237044,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "493 debug pnpm:fetching-progress": {
+    "downloaded": 5253428,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "494 debug pnpm:fetching-progress": {
+    "downloaded": 5269812,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "495 debug pnpm:fetching-progress": {
+    "downloaded": 5286196,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "496 debug pnpm:fetching-progress": {
+    "downloaded": 5302580,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "497 debug pnpm:fetching-progress": {
+    "downloaded": 5318964,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "498 debug pnpm:fetching-progress": {
+    "downloaded": 5335348,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "499 debug pnpm:fetching-progress": {
+    "downloaded": 5351732,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "500 debug pnpm:fetching-progress": {
+    "downloaded": 5368116,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "501 debug pnpm:fetching-progress": {
+    "downloaded": 5384500,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "502 debug pnpm:fetching-progress": {
+    "downloaded": 5400884,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "503 debug pnpm:fetching-progress": {
+    "downloaded": 5417268,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "504 debug pnpm:fetching-progress": {
+    "downloaded": 5433652,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "505 debug pnpm:fetching-progress": {
+    "downloaded": 5450036,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "506 debug pnpm:fetching-progress": {
+    "downloaded": 5466420,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "507 debug pnpm:fetching-progress": {
+    "downloaded": 5482804,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "508 debug pnpm:fetching-progress": {
+    "downloaded": 5499188,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "509 debug pnpm:fetching-progress": {
+    "downloaded": 5515572,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "510 debug pnpm:fetching-progress": {
+    "downloaded": 5531956,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "511 debug pnpm:fetching-progress": {
+    "downloaded": 5548340,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "512 debug pnpm:fetching-progress": {
+    "downloaded": 5564724,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "513 debug pnpm:fetching-progress": {
+    "downloaded": 5581108,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "514 debug pnpm:fetching-progress": {
+    "downloaded": 5597492,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "515 debug pnpm:fetching-progress": {
+    "downloaded": 5609780,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "516 debug pnpm:fetching-progress": {
+    "downloaded": 5626164,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "517 debug pnpm:fetching-progress": {
+    "downloaded": 5642548,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "518 debug pnpm:fetching-progress": {
+    "downloaded": 5658932,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "519 debug pnpm:fetching-progress": {
+    "downloaded": 5675316,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "520 debug pnpm:fetching-progress": {
+    "downloaded": 5691700,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "521 debug pnpm:fetching-progress": {
+    "downloaded": 5708084,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "522 debug pnpm:fetching-progress": {
+    "downloaded": 5724468,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "523 debug pnpm:fetching-progress": {
+    "downloaded": 5740852,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "524 debug pnpm:fetching-progress": {
+    "downloaded": 5757236,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "525 debug pnpm:fetching-progress": {
+    "downloaded": 5773620,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "526 debug pnpm:fetching-progress": {
+    "downloaded": 5790004,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "527 debug pnpm:fetching-progress": {
+    "downloaded": 5806388,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "528 debug pnpm:fetching-progress": {
+    "downloaded": 5822772,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "529 debug pnpm:fetching-progress": {
+    "downloaded": 5839156,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "530 debug pnpm:fetching-progress": {
+    "downloaded": 5855540,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "531 debug pnpm:fetching-progress": {
+    "downloaded": 5871924,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "532 debug pnpm:fetching-progress": {
+    "downloaded": 5888308,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "533 debug pnpm:fetching-progress": {
+    "downloaded": 5904692,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "534 debug pnpm:fetching-progress": {
+    "downloaded": 5921076,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "535 debug pnpm:fetching-progress": {
+    "downloaded": 5937460,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "536 debug pnpm:fetching-progress": {
+    "downloaded": 5953844,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "537 debug pnpm:fetching-progress": {
+    "downloaded": 5970228,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "538 debug pnpm:fetching-progress": {
+    "downloaded": 5986612,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "539 debug pnpm:fetching-progress": {
+    "downloaded": 6002996,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "540 debug pnpm:fetching-progress": {
+    "downloaded": 6019380,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "541 debug pnpm:fetching-progress": {
+    "downloaded": 6035764,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "542 debug pnpm:fetching-progress": {
+    "downloaded": 6052148,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "543 debug pnpm:fetching-progress": {
+    "downloaded": 6068532,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "544 debug pnpm:fetching-progress": {
+    "downloaded": 6084916,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "545 debug pnpm:fetching-progress": {
+    "downloaded": 6101300,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "546 debug pnpm:fetching-progress": {
+    "downloaded": 6117684,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "547 debug pnpm:fetching-progress": {
+    "downloaded": 6134068,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "548 debug pnpm:fetching-progress": {
+    "downloaded": 6150452,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "549 debug pnpm:fetching-progress": {
+    "downloaded": 6166836,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "550 debug pnpm:fetching-progress": {
+    "downloaded": 6183220,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "551 debug pnpm:fetching-progress": {
+    "downloaded": 6199604,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "552 debug pnpm:fetching-progress": {
+    "downloaded": 6215988,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "553 debug pnpm:fetching-progress": {
+    "downloaded": 6232372,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "554 debug pnpm:fetching-progress": {
+    "downloaded": 6248756,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "555 debug pnpm:fetching-progress": {
+    "downloaded": 6265140,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "556 debug pnpm:fetching-progress": {
+    "downloaded": 6281524,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "557 debug pnpm:fetching-progress": {
+    "downloaded": 6297908,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "558 debug pnpm:fetching-progress": {
+    "downloaded": 6314292,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "559 debug pnpm:fetching-progress": {
+    "downloaded": 6330676,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "560 debug pnpm:fetching-progress": {
+    "downloaded": 6347060,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "561 debug pnpm:fetching-progress": {
+    "downloaded": 6363444,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "562 debug pnpm:fetching-progress": {
+    "downloaded": 6379828,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "563 debug pnpm:fetching-progress": {
+    "downloaded": 6396212,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "564 debug pnpm:fetching-progress": {
+    "downloaded": 6412596,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "565 debug pnpm:fetching-progress": {
+    "downloaded": 6428980,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "566 debug pnpm:fetching-progress": {
+    "downloaded": 6445364,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "567 debug pnpm:fetching-progress": {
+    "downloaded": 6461748,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "568 debug pnpm:fetching-progress": {
+    "downloaded": 6478132,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "569 debug pnpm:fetching-progress": {
+    "downloaded": 6494516,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "570 debug pnpm:fetching-progress": {
+    "downloaded": 6510900,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "571 debug pnpm:fetching-progress": {
+    "downloaded": 6527284,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "572 debug pnpm:fetching-progress": {
+    "downloaded": 6543668,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "573 debug pnpm:fetching-progress": {
+    "downloaded": 6560052,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "574 debug pnpm:fetching-progress": {
+    "downloaded": 6576436,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "575 debug pnpm:fetching-progress": {
+    "downloaded": 6592820,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "576 debug pnpm:fetching-progress": {
+    "downloaded": 6609204,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "577 debug pnpm:fetching-progress": {
+    "downloaded": 6625588,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "578 debug pnpm:fetching-progress": {
+    "downloaded": 6641972,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "579 debug pnpm:fetching-progress": {
+    "downloaded": 6658356,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "580 debug pnpm:fetching-progress": {
+    "downloaded": 6674740,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "581 debug pnpm:fetching-progress": {
+    "downloaded": 6691124,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "582 debug pnpm:fetching-progress": {
+    "downloaded": 6700107,
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "status": "in_progress"
+  },
+  "583 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/next/12.1.5",
+    "requester": "/Users/CS64/Work/gr14-marketplace",
+    "status": "fetched"
+  },
+  "584 error pnpm": {
+    "code": "ERR_PNPM_FETCH_404",
+    "hint": "type-utilities is not in the npm registry, or you have no permission to fetch it.\n\nNo authorization header was set for the request.",
+    "request": {
+      "url": "https://registry.npmjs.org/type-utilities"
+    },
+    "response": {
+      "size": 0
+    },
+    "pkgName": "type-utilities",
+    "spec": {
+      "fetchSpec": "latest",
+      "name": "type-utilities",
+      "type": "tag"
+    },
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "GET https://registry.npmjs.org/type-utilities: Not Found - 404",
+      "code": "ERR_PNPM_FETCH_404",
+      "stack": "pnpm: GET https://registry.npmjs.org/type-utilities: Not Found - 404\n    at RetryOperation._fn (/Users/CS64/Library/pnpm/global/5/.pnpm/pnpm@7.2.1/node_modules/pnpm/dist/pnpm.cjs:84538:19)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+    }
+  }
+}
