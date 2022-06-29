@@ -49,10 +49,6 @@ export const Card: React.FC<{ attributes: any }> = ({ attributes }) => {
               <div>AGE</div>
               <div>{new Date(attributes.created).getHours()} Hours Ago</div>
             </li>
-            <li>
-              <div>LIKES</div>
-              <div>{attributes.likes}</div>
-            </li>
           </ul>
         </div>
       </div>
