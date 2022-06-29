@@ -21,6 +21,7 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface LendInterface extends ethers.utils.Interface {
   functions: {
+    "admins(address)": FunctionFragment;
     "allowedToken(address)": FunctionFragment;
     "currency()": FunctionFragment;
     "decimals()": FunctionFragment;
@@ -36,6 +37,7 @@ interface LendInterface extends ethers.utils.Interface {
     "transferOwnership(address)": FunctionFragment;
   };
 
+  encodeFunctionData(functionFragment: "admins", values: [string]): string;
   encodeFunctionData(
     functionFragment: "allowedToken",
     values: [string]
@@ -77,6 +79,7 @@ interface LendInterface extends ethers.utils.Interface {
     values: [string]
   ): string;
 
+  decodeFunctionResult(functionFragment: "admins", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "allowedToken",
     data: BytesLike
@@ -219,6 +222,8 @@ export class Lend extends BaseContract {
   interface: LendInterface;
 
   functions: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<[boolean]>;
+
     allowedToken(arg0: string, overrides?: CallOverrides): Promise<[boolean]>;
 
     currency(overrides?: CallOverrides): Promise<[string]>;
@@ -286,6 +291,8 @@ export class Lend extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
+
+  admins(arg0: string, overrides?: CallOverrides): Promise<boolean>;
 
   allowedToken(arg0: string, overrides?: CallOverrides): Promise<boolean>;
 
@@ -355,6 +362,8 @@ export class Lend extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+
     allowedToken(arg0: string, overrides?: CallOverrides): Promise<boolean>;
 
     currency(overrides?: CallOverrides): Promise<string>;
@@ -555,6 +564,8 @@ export class Lend extends BaseContract {
   };
 
   estimateGas: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
     allowedToken(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
     currency(overrides?: CallOverrides): Promise<BigNumber>;
@@ -615,6 +626,11 @@ export class Lend extends BaseContract {
   };
 
   populateTransaction: {
+    admins(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     allowedToken(
       arg0: string,
       overrides?: CallOverrides

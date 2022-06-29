@@ -21,12 +21,14 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface AccessControlContractInterface extends ethers.utils.Interface {
   functions: {
+    "admins(address)": FunctionFragment;
     "owner()": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
     "setAdmin(address,bool)": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
   };
 
+  encodeFunctionData(functionFragment: "admins", values: [string]): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "renounceOwnership",
@@ -41,6 +43,7 @@ interface AccessControlContractInterface extends ethers.utils.Interface {
     values: [string]
   ): string;
 
+  decodeFunctionResult(functionFragment: "admins", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "renounceOwnership",
@@ -117,6 +120,8 @@ export class AccessControlContract extends BaseContract {
   interface: AccessControlContractInterface;
 
   functions: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<[boolean]>;
+
     owner(overrides?: CallOverrides): Promise<[string]>;
 
     renounceOwnership(
@@ -134,6 +139,8 @@ export class AccessControlContract extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
+
+  admins(arg0: string, overrides?: CallOverrides): Promise<boolean>;
 
   owner(overrides?: CallOverrides): Promise<string>;
 
@@ -153,6 +160,8 @@ export class AccessControlContract extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+
     owner(overrides?: CallOverrides): Promise<string>;
 
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
@@ -206,6 +215,8 @@ export class AccessControlContract extends BaseContract {
   };
 
   estimateGas: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
     owner(overrides?: CallOverrides): Promise<BigNumber>;
 
     renounceOwnership(
@@ -225,6 +236,11 @@ export class AccessControlContract extends BaseContract {
   };
 
   populateTransaction: {
+    admins(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     renounceOwnership(

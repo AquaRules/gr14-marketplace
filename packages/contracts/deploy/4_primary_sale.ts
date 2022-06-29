@@ -1,12 +1,13 @@
 import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/dist/types";
+import { NFT } from "../typechain";
 
 const func: DeployFunction = async (hre) => {
 	const { deployments, getNamedAccounts } = hre;
 	const { deploy, execute } = deployments;
 
 	const { deployer } = await getNamedAccounts();
-	const NFT = await ethers.getContract("NFTProxy");
+	const NFT = (await ethers.getContract("NFTProxy")) as NFT;
 	const Currency = await ethers.getContract("TestERC20");
 
 	const PrimarySale = await deploy("PrimarySale", {

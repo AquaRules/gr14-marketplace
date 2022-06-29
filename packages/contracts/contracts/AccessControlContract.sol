@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/presets/ERC20PresetMinterPauser.sol"
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
 contract AccessControlContract is OwnableUpgradeable {
-	mapping(address => bool) admins;
+	mapping(address => bool) public admins;
 
 	event SetAdmin(address admin, bool enabled);
 

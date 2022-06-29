@@ -21,6 +21,7 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface NFTInterface extends ethers.utils.Interface {
   functions: {
+    "admins(address)": FunctionFragment;
     "approve(address,uint256)": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
     "getApproved(uint256)": FunctionFragment;
@@ -43,6 +44,7 @@ interface NFTInterface extends ethers.utils.Interface {
     "transferOwnership(address)": FunctionFragment;
   };
 
+  encodeFunctionData(functionFragment: "admins", values: [string]): string;
   encodeFunctionData(
     functionFragment: "approve",
     values: [string, BigNumberish]
@@ -109,6 +111,7 @@ interface NFTInterface extends ethers.utils.Interface {
     values: [string]
   ): string;
 
+  decodeFunctionResult(functionFragment: "admins", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
   decodeFunctionResult(
@@ -248,6 +251,8 @@ export class NFT extends BaseContract {
   interface: NFTInterface;
 
   functions: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<[boolean]>;
+
     approve(
       to: string,
       tokenId: BigNumberish,
@@ -355,6 +360,8 @@ export class NFT extends BaseContract {
     ): Promise<ContractTransaction>;
   };
 
+  admins(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+
   approve(
     to: string,
     tokenId: BigNumberish,
@@ -456,6 +463,8 @@ export class NFT extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+
     approve(
       to: string,
       tokenId: BigNumberish,
@@ -643,6 +652,8 @@ export class NFT extends BaseContract {
   };
 
   estimateGas: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
     approve(
       to: string,
       tokenId: BigNumberish,
@@ -751,6 +762,11 @@ export class NFT extends BaseContract {
   };
 
   populateTransaction: {
+    admins(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     approve(
       to: string,
       tokenId: BigNumberish,

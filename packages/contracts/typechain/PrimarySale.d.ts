@@ -21,6 +21,7 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface PrimarySaleInterface extends ethers.utils.Interface {
   functions: {
+    "admins(address)": FunctionFragment;
     "createSale((uint256,address,uint256,uint256,address))": FunctionFragment;
     "currencies(address)": FunctionFragment;
     "getCreatedSales(address)": FunctionFragment;
@@ -36,6 +37,7 @@ interface PrimarySaleInterface extends ethers.utils.Interface {
     "transferOwnership(address)": FunctionFragment;
   };
 
+  encodeFunctionData(functionFragment: "admins", values: [string]): string;
   encodeFunctionData(
     functionFragment: "createSale",
     values: [
@@ -88,6 +90,7 @@ interface PrimarySaleInterface extends ethers.utils.Interface {
     values: [string]
   ): string;
 
+  decodeFunctionResult(functionFragment: "admins", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "createSale", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "currencies", data: BytesLike): Result;
   decodeFunctionResult(
@@ -210,6 +213,8 @@ export class PrimarySale extends BaseContract {
   interface: PrimarySaleInterface;
 
   functions: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<[boolean]>;
+
     createSale(
       _createdSale: {
         tokenId: BigNumberish;
@@ -284,6 +289,8 @@ export class PrimarySale extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
+
+  admins(arg0: string, overrides?: CallOverrides): Promise<boolean>;
 
   createSale(
     _createdSale: {
@@ -360,6 +367,8 @@ export class PrimarySale extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<boolean>;
+
     createSale(
       _createdSale: {
         tokenId: BigNumberish;
@@ -529,6 +538,8 @@ export class PrimarySale extends BaseContract {
   };
 
   estimateGas: {
+    admins(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
     createSale(
       _createdSale: {
         tokenId: BigNumberish;
@@ -597,6 +608,11 @@ export class PrimarySale extends BaseContract {
   };
 
   populateTransaction: {
+    admins(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     createSale(
       _createdSale: {
         tokenId: BigNumberish;
