@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 export const Navbar: React.FC = () => {
   const { route } = useRouter();
-  const { user, logout } = useAuth();
+  const { loggedIn, logout } = useAuth();
   const [navSelection, setNavSelection] = React.useState<number>(0);
   const navOptions = [
     { title: 'home', url: '/' },
@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
             </li>
           );
         })}
-        {user.address != '' ? (
+        {loggedIn ? (
           <li className={styles.button} onClick={logout}>
             Logout
           </li>

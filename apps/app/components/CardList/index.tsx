@@ -2,7 +2,7 @@ import useAuth from '../AuthContext';
 import { useCovalent } from '../../hooks/useCovalent';
 import Image from 'next/image';
 import { Attributes, Card } from '../Card';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './index.module.scss';
 import { useMetaMask } from 'metamask-react';
 import config from '../../config.json';
@@ -11,23 +11,20 @@ import { ethers } from 'ethers';
 
 export const CardList: React.FC = () => {
   const [chainSelect, setChainSelect] = React.useState<number>(0);
+  const [tokens, setTokens] = React.useState<Attributes[]>([]);
   const chainOptions = [
     { title: 'ethereum', url: '/eth.png', color: 'primary' },
     { title: 'polygon', url: '/matic.png', color: 'secondary' },
   ];
+  const [init, setInit] = React.useState(false);
+
   const { user, loggedIn } = useAuth();
   const { getTokens, getTokenMetadata } = useCovalent();
-  const { chainId, connect, account } = useMetaMask();
-  const [init, setInit] = useState(false);
-
+  const { chainId, account, status, connect } = useMetaMask();
   const { getSale, getNFT } = useContracts();
-  useEffect(() => {
-    connect();
-  }, [connect]);
-  useEffect(() => {
-    const run = async () => {
-      await connect();
 
+  const getItems = React.useCallback(() => {
+    const run = async () => {
       const data = await getTokens(
         parseInt(chainId.toString(), 16),
         config[parseInt(chainId.toString(), 16).toString()]['NFT']
@@ -56,11 +53,11 @@ export const CardList: React.FC = () => {
               })
             ).json()
           )?.['message'];
+          console.log("FETCHED USER")
           setTokens((_tokens) => {
             const tokenData = JSON.parse(
               atob(token_url.split('data:application/json;base64,')[1])
             );
-
             const dataVal = {
               id: tokenId,
               title: tokenData?.['name'],
@@ -78,42 +75,27 @@ export const CardList: React.FC = () => {
         }
       }
     };
-    if (chainId && init === false && account) {
+    if (init === false) {
       run();
       setInit(true);
     }
   }, [
     getTokenMetadata,
     getTokens,
-    chainId,
     init,
     getSale,
-    account,
-    connect,
     getNFT,
+    chainId,
+    setTokens
   ]);
 
-  const [tokens, setTokens] = React.useState<Attributes[]>([]);
+  React.useEffect(()=>{
+    connect();
+  },[connect])
 
-  // const dummyCards: Attributes[] = [
-  //   {
-  //     title: 'Card#1',
-  //     owner: 'abhinavr',
-  //     type: 'Comedy',
-  //     id: 1,
-  //     price: { chainId: 1, amount: 5.2, chainName: 'ETH' },
-  //     image_url:
-  //       'https://64.media.tumblr.com/780e42f226309d1998293cee15814051/tumblr_mubkq9dZhh1rmfvsio1_400.gif',
-  //   },
-  //   {
-  //     title: 'Card#1',
-  //     owner: 'abhinavr',
-  //     type: 'Comedy',
-  //     id: 2,
-  //     price: { chainId: 1, amount: 2, chainName: 'ETH' },
-  //     image_url: 'https://media2.giphy.com/media/G3lxvBMhGu53y/giphy.gif',
-  //   },
-  // ];
+  React.useEffect(()=>{
+    if(loggedIn) getItems();
+  },[loggedIn, user, account, status])
 
   return (
     <div className={styles.wrapper}>
