@@ -2,7 +2,7 @@ import useAuth from '../AuthContext';
 import { useCovalent } from '../../hooks/useCovalent';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
-import { Card } from '../Card';
+import { Attributes, Card } from '../Card';
 import styles from './index.module.scss';
 
 export const CardList: React.FC = () => {
@@ -35,60 +35,23 @@ export const CardList: React.FC = () => {
     run();
   }, [getTokenMetadata, getTokens]);
 
-  const dummyCards = [
+  const dummyCards:Attributes[] = [
     {
       title: 'Card#1',
       owner: 'abhinavr',
-      created: Date.now() - 100 * 60 * 60 * 24,
       type: 'Comedy',
-      id: '1',
-      price: { chain: 1, amount: 2, chainName: 'ETH' },
-      lend: { enabled: true, amount: 0.1 },
+      id: 1,
+      price: { chainId: 1, amount: 2, chainName: 'ETH' },
       image_url:
         'https://64.media.tumblr.com/780e42f226309d1998293cee15814051/tumblr_mubkq9dZhh1rmfvsio1_400.gif',
     },
     {
       title: 'Card#1',
       owner: 'abhinavr',
-      created: Date.now() - 100 * 60 * 60 * 24,
       type: 'Comedy',
-      id: '1',
-      price: { chain: 1, amount: 2, chainName: 'ETH' },
-      lend: { enabled: true, amount: 0.1 },
+      id: 2,
+      price: { chainId: 1, amount: 2, chainName: 'ETH' },
       image_url: 'https://media2.giphy.com/media/G3lxvBMhGu53y/giphy.gif',
-    },
-    {
-      title: 'Card#1',
-      owner: 'abhinavr',
-      created: Date.now() - 100 * 60 * 60 * 24,
-      type: 'Comedy',
-      id: '1',
-      price: { chain: 1, amount: 2, chainName: 'ETH' },
-      lend: { enabled: true, amount: 0.1 },
-      image_url:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F4GDliBrmcmuFa%2Fgiphy.gif&f=1&nofb=1',
-    },
-    {
-      title: 'Card#1',
-      owner: 'abhinavr',
-      created: Date.now() - 100 * 60 * 60 * 24,
-      type: 'Comedy',
-      id: '1',
-      price: { chain: 1, amount: 2, chainName: 'ETH' },
-      lend: { enabled: true, amount: 0.1 },
-      image_url:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F8832ed90df55d2f8a1aae2ff3e183c00%2Ftenor.gif%3Fitemid%3D9254331&f=1&nofb=1',
-    },
-    {
-      title: 'Card#1',
-      owner: 'abhinavr',
-      created: Date.now() - 100 * 60 * 60 * 24,
-      type: 'Comedy',
-      id: '1',
-      price: { chain: 1, amount: 2, chainName: 'ETH' },
-      lend: { enabled: true, amount: 0.1 },
-      image_url:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lBsU-sg7q1Uxn9r9gtNrwgHaHW%26pid%3DApi&f=1',
     },
   ];
 
