@@ -62,10 +62,10 @@ export const Card: React.FC<{ attributes: Attributes }> = ({ attributes }) => {
             <button
               onClick={async () => {
                 const Sale = await getSale();
-                const ERC20 = await getTestERC20();
-                (
-                  await ERC20.approve(Sale.address, ethers.constants.MaxUint256)
-                ).wait();
+                // const ERC20 = await getTestERC20();
+                // (
+                //   await ERC20.approve(Sale.address, ethers.constants.MaxUint256)
+                // ).wait();
 
                 (await Sale.makeSale(attributes.id)).wait();
               }}
