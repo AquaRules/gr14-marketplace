@@ -10,13 +10,17 @@ import {
   Input,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import useAuth from 'apps/app/components/AuthContext';
 
 export default function Index() {
   const [connected, setConnected] = React.useState(false);
   const [newUser, setNewUser] = React.useState(true);
+  const { login, setUserName } = useAuth();
 
   const handleMetamaskConnect = () => {
-    setConnected(true);
+    const user = login();
+    if (user.address != '') setConnected(true);
+    if (user.name != '') setNewUser(false);
   };
 
   const createSchema = Yup.object().shape({
@@ -32,7 +36,8 @@ export default function Index() {
             <Formik
               initialValues={{ name: '' }}
               validationSchema={createSchema}
-              onSubmit={() => {
+              onSubmit={(values) => {
+                setUserName(values.name)
                 setNewUser(false);
               }}
             >
