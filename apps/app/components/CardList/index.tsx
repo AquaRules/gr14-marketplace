@@ -11,7 +11,7 @@ export const CardList: React.FC = () => {
     { title: 'ethereum', url: '/eth.png', color: 'primary' },
     { title: 'polygon', url: '/matic.png', color: 'secondary' },
   ];
-  const { user } = useAuth();
+  const { user, loggedIn } = useAuth();
   const { getTokens, getTokenMetadata } = useCovalent();
 
   useEffect(() => {
@@ -119,7 +119,7 @@ export const CardList: React.FC = () => {
             );
           })}
         </div>
-        {user.name !== '' ? (
+        {loggedIn ? (
           <div className={styles.select}>
             <div className={styles.button}>{user.name}</div>
             <div className={styles.button} datatype="active secondary">
