@@ -97,8 +97,8 @@ export default function Index() {
                 <>
                   <FormLabel htmlFor="chain">Select Chain</FormLabel>
                   <Select {...field}>
-                    <option value="ethereum">ETHEREUM</option>
-                    <option value="polygon">POLYGON</option>
+                    <option value="ethereum">ETHEREUM - Kovan(42)</option>
+                    <option value="polygon">POLYGON - Mumbai(80001)</option>
                   </Select>
                 </>
               )}

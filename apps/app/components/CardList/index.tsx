@@ -128,7 +128,9 @@ export const CardList: React.FC = () => {
           </div>
         ) : (
           <div className={styles.select}>
-            <div className={styles.button} style={{width:"100%"}}>Not logged into metamask</div>
+            <div className={styles.button} style={{ width: '100%' }}>
+              Not logged into metamask
+            </div>
           </div>
         )}
       </div>

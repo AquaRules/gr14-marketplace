@@ -63,7 +63,7 @@ const config: HardhatUserConfig = {
 		mumbai: {
 			url: process.env.MUMBAI_URL || "",
 			chainId: 80001,
-			gasPrice: 12_800_000_000,
+			gasPrice: 22_800_000_000,
 			accounts: process.env.PRIVATE_KEY !== undefined ? accounts() : [],
 		},
 	},
