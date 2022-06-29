@@ -11,6 +11,7 @@ const func: DeployFunction = async (hre) => {
 		from: deployer,
 		contract: "NFT",
 		log: true,
+		skipIfAlreadyDeployed: true,
 		proxy: {
 			proxyContract: "OptimizedTransparentProxy",
 			execute: {

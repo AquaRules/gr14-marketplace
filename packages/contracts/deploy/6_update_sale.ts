@@ -9,7 +9,7 @@ const func: DeployFunction = async (hre) => {
 
 	const DefaultProxy = await ethers.getContract("DefaultProxyAdmin");
 
-	const PrimarySaleV2 = await deploy("PrimarySaleV2", {
+	const PrimarySaleV3 = await deploy("PrimarySaleV4", {
 		from: deployer,
 		log: true,
 		contract: "PrimarySale",
@@ -26,7 +26,7 @@ const func: DeployFunction = async (hre) => {
 		await (
 			await DefaultProxy.upgrade(
 				PrimarySaleProxy.address,
-				PrimarySaleV2.address
+				PrimarySaleV3.address
 			)
 		).wait();
 	}

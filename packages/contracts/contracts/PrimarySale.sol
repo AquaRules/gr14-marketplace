@@ -72,14 +72,14 @@ contract PrimarySale is AccessControlContract, ReentrancyGuardUpgradeable {
 	function createSale(CreatedSale memory _createdSale) external {
 		require(_createdSale.untill > block.timestamp, "Invalid time");
 		require(currencies[_createdSale.currency] != 0, "Invalid currency");
-		require(
-			token.ownerOf(_createdSale.tokenId) == _msgSender(),
-			"Not owner"
-		);
+
 		require(
 			token.isApprovedForAll(_msgSender(), address(this)),
-			"Sale created"
+			"Not approved"
 		);
+
+		_createdSale.tokenId = INFT(address(token)).mint(_msgSender());
+
 		_createdSales[_msgSender()].add(_createdSale.tokenId);
 		saleMapping[_createdSale.tokenId] = _createdSale;
 

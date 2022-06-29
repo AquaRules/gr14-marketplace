@@ -66,16 +66,32 @@ export function AuthProvider({
   };
 
   React.useEffect(() => {
-    if (account && account.length > 10 && status == "connected") setConnected(true);
+    if (account && account.length > 10 && status == 'connected')
+      setConnected(true);
   }, [account]);
 
-  React.useEffect(()=>{
-    if(user && account && user.name.length > 3 && user.address.length > 10 && account.length > 10) setLoggedIn(true)
-    else setLoggedIn(false)
-  },[user, connected, account])
+  React.useEffect(() => {
+    if (
+      user &&
+      account &&
+      user.name.length > 3 &&
+      user.address.length > 10 &&
+      account.length > 10
+    )
+      setLoggedIn(true);
+    else setLoggedIn(false);
+  }, [user, connected, account]);
 
   const memoedValues = React.useMemo(
-    () => ({ user, login, logout, setUserName, connected, setConnected, loggedIn }),
+    () => ({
+      user,
+      login,
+      logout,
+      setUserName,
+      connected,
+      setConnected,
+      loggedIn,
+    }),
     [user]
   );
 

@@ -40,8 +40,6 @@ export type { INFT } from "./INFT";
 export type { Lend } from "./Lend";
 export type { NFT } from "./NFT";
 export type { PrimarySale } from "./PrimarySale";
-export type { OptimizedTransparentUpgradeableProxy } from "./OptimizedTransparentUpgradeableProxy";
-export type { UpgradeableProxy } from "./UpgradeableProxy";
 
 export { OwnableUpgradeable__factory } from "./factories/OwnableUpgradeable__factory";
 export { Initializable__factory } from "./factories/Initializable__factory";
@@ -82,5 +80,3 @@ export { INFT__factory } from "./factories/INFT__factory";
 export { Lend__factory } from "./factories/Lend__factory";
 export { NFT__factory } from "./factories/NFT__factory";
 export { PrimarySale__factory } from "./factories/PrimarySale__factory";
-export { OptimizedTransparentUpgradeableProxy__factory } from "./factories/OptimizedTransparentUpgradeableProxy__factory";
-export { UpgradeableProxy__factory } from "./factories/UpgradeableProxy__factory";

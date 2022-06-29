@@ -15,6 +15,11 @@ import { Field, Form, Formik } from 'formik';
 import React from 'react';
 import styles from './index.module.scss';
 import * as Yup from 'yup';
+import { useMetaMask } from 'metamask-react';
+import { ethers } from 'ethers';
+import { getContractABI } from '../../contracts';
+import config from '../../config.json';
+import { Sale, NFT } from '../../types';
 
 export default function Index() {
   const catagories = [
@@ -36,6 +41,61 @@ export default function Index() {
     currency: Yup.string(),
   });
 
+  const { ethereum, chainId, account } = useMetaMask();
+
+  const getEthers = async () => {
+    return new ethers.providers.Web3Provider(ethereum, 'any').getSigner();
+  };
+  const chain = () => parseInt(chainId.toString(), 16).toString();
+
+  const getSale = async () => {
+    console.log({ config });
+    return new ethers.Contract(
+      config[chain()]['Sale'],
+      await getContractABI('Sale'),
+      await getEthers()
+    ) as Sale;
+  };
+
+  const getNFT = async () => {
+    return new ethers.Contract(
+      config[chain()]['NFT'],
+      await getContractABI('NFT'),
+      await getEthers()
+    ) as NFT;
+  };
+
+  const getTestERC20 = async () => {
+    return new ethers.Contract(
+      config[chain()]['TestERC20'],
+      await getContractABI('TestERC20'),
+      await getEthers()
+    ) as NFT;
+  };
+
+  const makeSale = async (values: {
+    name: string;
+    image: string;
+    type: string;
+    chain: string;
+    price: number;
+    currency: string;
+  }) => {
+    const Sale = await getSale();
+    const NFT = await getNFT();
+    if ((await NFT.isApprovedForAll(account, Sale.address)) !== true) {
+      console.log('verify');
+      await (await NFT.setApprovalForAll(Sale.address, true)).wait();
+    }
+    await Sale.estimateGas.createSale({
+      tokenId: '1',
+      currency: (await getTestERC20()).address,
+      owner: account,
+      price: ethers.utils.parseEther(values.price.toString()),
+      untill: 30 * 24 * 3600,
+    });
+  };
+
   return (
     <div className={styles.wrapper}>
       <h1>Create Your NFT</h1>
@@ -51,10 +111,14 @@ export default function Index() {
         }}
         validationSchema={createSchema}
         onSubmit={(values, actions) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            actions.setSubmitting(false);
-          }, 1000);
+          makeSale(values)
+            .then(() => {
+              actions.setSubmitting(false);
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+          // alert(JSON.stringify(values, null, 2));
         }}
       >
         {(props) => (
