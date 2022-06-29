@@ -16,7 +16,7 @@ import Router from 'next/router';
 
 export default function Index() {
   const [newUser, setNewUser] = React.useState(true);
-  const { login, setUserName, user, connected } = useAuth();
+  const { login, setUserName, user, loggedIn, connected } = useAuth();
   const { connect, account } = useMetaMask();
 
   const handleMetamaskConnect = async () => {
@@ -36,7 +36,7 @@ export default function Index() {
   React.useEffect(() => {
     if (user.name != '') {
       setNewUser(false);
-      if (connected) {
+      if (loggedIn) {
         Router.push('/');
       }
     }

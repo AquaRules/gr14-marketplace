@@ -10,6 +10,7 @@ interface AuthContextType {
   setUserName?: (name: string) => void;
   connected?: boolean;
   setConnected?: any;
+  loggedIn?: boolean;
 }
 
 const AuthContext = React.createContext<AuthContextType>({} as AuthContextType);
@@ -20,8 +21,9 @@ export function AuthProvider({
   children: React.ReactNode;
 }): JSX.Element {
   const [user, setUser] = React.useState<User>({ name: '', address: '' });
-  const { account } = useMetaMask();
+  const { account, status } = useMetaMask();
   const [connected, setConnected] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(false);
 
   const setUserName = async (name: string) => {
     const updateUser = user;
@@ -64,11 +66,16 @@ export function AuthProvider({
   };
 
   React.useEffect(() => {
-    if (account && account.length > 5) setConnected(true);
+    if (account && account.length > 10 && status == "connected") setConnected(true);
   }, [account]);
 
+  React.useEffect(()=>{
+    if(user && account && user.name.length > 3 && user.address.length > 10 && account.length > 10) setLoggedIn(true)
+    else setLoggedIn(false)
+  },[user, connected, account])
+
   const memoedValues = React.useMemo(
-    () => ({ user, login, logout, setUserName, connected, setConnected }),
+    () => ({ user, login, logout, setUserName, connected, setConnected, loggedIn }),
     [user]
   );
 
