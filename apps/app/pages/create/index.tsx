@@ -33,6 +33,7 @@ export default function Index() {
     chain: Yup.string(),
     price: Yup.number(),
     lend: Yup.number(),
+    currency: Yup.string(),
   });
 
   return (
@@ -46,6 +47,7 @@ export default function Index() {
           chain: 'ethereum',
           price: 1,
           lend: 0.01,
+          currency: 'default',
         }}
         validationSchema={createSchema}
         onSubmit={(values, actions) => {
@@ -146,6 +148,17 @@ export default function Index() {
                   </FormControl>
                 );
               }}
+            </Field>
+            <Field name="currency">
+              {({ field }) => (
+                <>
+                  <FormLabel htmlFor="currency">Select Currency</FormLabel>
+                  <Select {...field}>
+                    <option value="default">DEFAULT</option>
+                    <option value="usdt">USDT</option>
+                  </Select>
+                </>
+              )}
             </Field>
             <Button
               mt={4}

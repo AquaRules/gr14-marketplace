@@ -21,7 +21,7 @@ export function AuthProvider({
   children: React.ReactNode;
 }): JSX.Element {
   const [user, setUser] = React.useState<User>({ name: '', address: '' });
-  const { account } = useMetaMask();
+  const { account, status } = useMetaMask();
   const [connected, setConnected] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
 
@@ -66,13 +66,13 @@ export function AuthProvider({
   };
 
   React.useEffect(() => {
-    if (account && account.length > 10) setConnected(true);
+    if (account && account.length > 10 && status == "connected") setConnected(true);
   }, [account]);
 
   React.useEffect(()=>{
-    if(user.name.length > 3 && user.address.length > 10 && account.length > 10) setLoggedIn(true)
+    if(user && account && user.name.length > 3 && user.address.length > 10 && account.length > 10) setLoggedIn(true)
     else setLoggedIn(false)
-  },[user])
+  },[user, connected, account])
 
   const memoedValues = React.useMemo(
     () => ({ user, login, logout, setUserName, connected, setConnected, loggedIn }),
