@@ -9,17 +9,13 @@ import {
   FormLabel,
   Input,
 } from '@chakra-ui/react';
-import Link from 'next/link';
-
-import useAuth from '../../components/AuthContext';
-
+import useAuth from 'apps/app/components/AuthContext';
 import { useMetaMask } from 'metamask-react';
 import Router from 'next/router';
 
 export default function Index() {
-  const [newUser, setNewUser] = React.useState(true);
-  const { login, setUserName, user, loggedIn, connected } = useAuth();
-  const { connect, account } = useMetaMask();
+  const { login, setUserName, loggedIn, connected } = useAuth();
+  const { connect, status, account } = useMetaMask();
 
   const handleMetamaskConnect = async () => {
     await connect();
@@ -30,69 +26,56 @@ export default function Index() {
   });
 
   React.useEffect(() => {
-    if (account) {
+    if (status == 'connected' && account && account.length > 10) {
       login();
     }
-  }, [account]);
+  }, [status]);
 
   React.useEffect(() => {
-    if (user.name != '') {
-      setNewUser(false);
-      if (loggedIn) {
-        Router.push('/');
-      }
+    if (loggedIn) {
+      Router.push('/');
     }
-  }, [user]);
+  }, [loggedIn]);
 
   return (
     <div className={styles.wrapper}>
       {connected ? (
-        newUser ? (
-          <>
-            <h1>New User?</h1>
-            <Formik
-              initialValues={{ name: '' }}
-              validationSchema={createSchema}
-              onSubmit={(values) => {
-                setUserName(values.name);
-                setNewUser(false);
-              }}
-            >
-              {(props) => (
-                <Form>
-                  <Field name="name">
-                    {({ field, form }) => (
-                      <FormControl
-                        isInvalid={form.errors.name && form.touched.name}
-                      >
-                        <FormLabel htmlFor="name">
-                          Give yourself a Name!
-                        </FormLabel>
-                        <Input {...field} id="name" placeholder="John Doe" />
-                        <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                      </FormControl>
-                    )}
-                  </Field>
-                  <Button
-                    mt={4}
-                    colorScheme="blackAlpha"
-                    isLoading={props.isSubmitting}
-                    type="submit"
-                  >
-                    Create my Account
-                  </Button>
-                </Form>
-              )}
-            </Formik>
-          </>
-        ) : (
-          <>
-            <h1>All Set!</h1>
-            <Link href="/">
-              <button>Take me home!</button>
-            </Link>
-          </>
-        )
+        <>
+          <h1>New User?</h1>
+          <Formik
+            initialValues={{ name: '' }}
+            validationSchema={createSchema}
+            onSubmit={(values) => {
+              setUserName(values.name);
+            }}
+          >
+            {(props) => (
+              <Form>
+                <Field name="name">
+                  {({ field, form }) => (
+                    <FormControl
+                      isInvalid={form.errors.name && form.touched.name}
+                    >
+                      <FormLabel htmlFor="name">
+                        Give yourself a Name!
+                      </FormLabel>
+                      <Input {...field} id="name" placeholder="John Doe" />
+                      <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Button
+                  mt={4}
+                  colorScheme="blackAlpha"
+                  isLoading={props.isSubmitting}
+                  type="submit"
+                >
+                  Create my Account
+                </Button>
+              </Form>
+            )}
+          </Formik>
+        </>
       ) : (
         <>
           <h1>Login with Metamask</h1>

@@ -20,8 +20,9 @@ export function AuthProvider({
 }: {
   children: React.ReactNode;
 }): JSX.Element {
-  const [user, setUser] = React.useState<User>({ name: '', address: '' });
   const { account, status } = useMetaMask();
+
+  const [user, setUser] = React.useState<User>({ name: '', address: '' });
   const [connected, setConnected] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
 
@@ -35,8 +36,13 @@ export function AuthProvider({
       updateUser.name = name;
       updateUser.address = account;
       setUser(updateUser);
-    } else if (res.status == 400) {
+      setLoggedIn(true);
+    } else if (res.status == 200) {
       // exists
+      updateUser.name = (await res.json()).message;
+      updateUser.address = account;
+      setUser(updateUser);
+      setLoggedIn(true);
     } else {
       // errored out
     }
@@ -45,23 +51,24 @@ export function AuthProvider({
   const login = async () => {
     const newUser = {
       name: '',
-      address: account,
+      address: '',
     };
     const res = await fetch(`/api/user/${account}`);
     if (res.status == 404) {
       // user not found
     } else if (res.status == 200) {
-      const data = await res.json();
-      newUser.name = data.message;
-      newUser.address = account;
+      newUser.name = (await res.json()).message;
+      setLoggedIn(true);
     } else {
       // errored out
     }
+    newUser.address = account;
     setUser(newUser);
   };
 
   const logout = () => {
     setUser({ name: '', address: '' });
+    setLoggedIn(false);
     setConnected(false);
   };
 
@@ -69,18 +76,6 @@ export function AuthProvider({
     if (account && account.length > 10 && status == 'connected')
       setConnected(true);
   }, [account]);
-
-  React.useEffect(() => {
-    if (
-      user &&
-      account &&
-      user.name.length > 3 &&
-      user.address.length > 10 &&
-      account.length > 10
-    )
-      setLoggedIn(true);
-    else setLoggedIn(false);
-  }, [user, connected, account]);
 
   const memoedValues = React.useMemo(
     () => ({
@@ -92,7 +87,7 @@ export function AuthProvider({
       setConnected,
       loggedIn,
     }),
-    [user]
+    [user, loggedIn, connected, account, status]
   );
 
   return (

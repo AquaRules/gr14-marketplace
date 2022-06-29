@@ -25,9 +25,11 @@ export default async function handler(
           message: 'Successfully created user!',
         });
       } catch (error: any) {
-        res.status(400).json({
-          success: false,
-          message: `Error: ${error}`,
+        const { address } = JSON.parse(req.body);
+        const mq = await userRecord.findOne({ address });
+        res.status(200).json({
+          success: true,
+          message: mq.name,
         });
       }
       break;
