@@ -41,7 +41,7 @@ export const CardList: React.FC = () => {
       owner: 'abhinavr',
       type: 'Comedy',
       id: 1,
-      price: { chainId: 1, amount: 2, chainName: 'ETH' },
+      price: { chainId: 1, amount: 5.2, chainName: 'ETH' },
       image_url:
         'https://64.media.tumblr.com/780e42f226309d1998293cee15814051/tumblr_mubkq9dZhh1rmfvsio1_400.gif',
     },

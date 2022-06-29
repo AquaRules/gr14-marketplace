@@ -24,8 +24,6 @@ export const Layout:React.FC<PropsWithChildren> = ({children}) => {
         <Image
           src="/bg.svg"
           alt="background"
-          width="100%"
-          height="100%"
           layout="fill"
           objectFit="cover"
         />

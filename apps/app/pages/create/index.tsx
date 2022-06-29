@@ -12,7 +12,7 @@ import {
   Select,
 } from '@chakra-ui/react';
 import { Field, Form, Formik } from 'formik';
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './index.module.scss';
 import * as Yup from 'yup';
 import { useMetaMask } from 'metamask-react';
@@ -37,7 +37,6 @@ export default function Index() {
     type: Yup.string(),
     chain: Yup.string(),
     price: Yup.number(),
-    lend: Yup.number(),
     currency: Yup.string(),
   });
 
@@ -136,7 +135,6 @@ export default function Index() {
           type: catagories[0],
           chain: 'ethereum',
           price: 1,
-          lend: 0.01,
           currency: 'usdt',
         }}
         validationSchema={createSchema}
@@ -206,28 +204,6 @@ export default function Index() {
                     <FormLabel htmlFor="price">Selling Price</FormLabel>
                     <NumberInput
                       id="price"
-                      precision={2}
-                      step={0.01}
-                      {...field}
-                      onChange={(val) => form.setFieldValue(field.name, val)}
-                    >
-                      <NumberInputField />
-                      <NumberInputStepper>
-                        <NumberIncrementStepper />
-                        <NumberDecrementStepper />
-                      </NumberInputStepper>
-                    </NumberInput>
-                  </FormControl>
-                );
-              }}
-            </Field>
-            <Field name="lend">
-              {({ field, form }) => {
-                return (
-                  <FormControl id="lend">
-                    <FormLabel htmlFor="lend">Lend For</FormLabel>
-                    <NumberInput
-                      id="lend"
                       precision={2}
                       step={0.01}
                       {...field}
