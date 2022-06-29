@@ -1,3 +1,5 @@
+import { useContracts } from 'apps/app/contracts';
+import { ethers } from 'ethers';
 import Image from 'next/image';
 import React from 'react';
 import useAuth from '../AuthContext';
@@ -17,7 +19,8 @@ export type Attributes = {
 };
 
 export const Card: React.FC<{ attributes: Attributes }> = ({ attributes }) => {
-  const {user} = useAuth();
+  const { user } = useAuth();
+  const { getSale, getTestERC20 } = useContracts();
   return (
     <div className={styles.wrapper}>
       <div className={styles.inner}>
@@ -55,7 +58,21 @@ export const Card: React.FC<{ attributes: Attributes }> = ({ attributes }) => {
               <div>{attributes.owner}</div>
             </li>
           </ul>
-          {attributes.owner != user.name && <button>Buy</button>}
+          {attributes.owner != user.name && (
+            <button
+              onClick={async () => {
+                const Sale = await getSale();
+                const ERC20 = await getTestERC20();
+                (
+                  await ERC20.approve(Sale.address, ethers.constants.MaxUint256)
+                ).wait();
+
+                (await Sale.makeSale(attributes.id)).wait();
+              }}
+            >
+              Buy
+            </button>
+          )}
         </div>
       </div>
       <div className={styles.hanging} datatype="left">

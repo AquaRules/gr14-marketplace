@@ -100,7 +100,7 @@ contract PrimarySale is AccessControlContract, ReentrancyGuardUpgradeable {
 			_sale.price
 		);
 
-		token.transferFrom(address(this), _sale.owner, _sale.tokenId);
+		token.transferFrom(address(this), _msgSender(), _sale.tokenId);
 		delete saleMapping[tokenId];
 		_createdSales[_sale.owner].remove(_sale.tokenId);
 	}
