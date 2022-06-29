@@ -14,7 +14,7 @@ export const Navbar: React.FC = () => {
   ];
   React.useEffect(() => {
     setNavSelection(navOptions.findIndex((v) => v.url == route));
-  }, []);
+  }, [route]);
   return (
     <nav className={styles.wrapper}>
       <h1 className={styles.logo}>GR14 Marketplace</h1>
