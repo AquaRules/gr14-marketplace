@@ -12,31 +12,31 @@ const func: DeployFunction = async (hre) => {
 		"PrimarySale"
 	)) as PrimarySale;
 	let tx: ContractTransaction;
-	if (true) {
-		console.log("approval");
-		tx = await Token.approve(
-			PrimarySale.address,
-			ethers.constants.MaxUint256
-		);
-		console.log(tx.hash);
-		await tx.wait();
+	// if (true) {
+	// 	console.log("approval");
+	// 	tx = await Token.approve(
+	// 		PrimarySale.address,
+	// 		ethers.constants.MaxUint256
+	// 	);
+	// 	console.log(tx.hash);
+	// 	await tx.wait();
 
-		console.log("minting");
-		tx = await PrimarySale.purchase(Token.address, 10);
-		console.log(tx.hash);
-		await tx.wait();
-	}
-	if (true) {
-		const uri =
-			"https://raw.githubusercontent.com/SurroundingArt64/cdn/master/0000000000000000000000000000000000000000000000000000000000000001.json";
-		console.log("setting");
-		tx = await NFT.setTokenURIs(
-			[...Array(10).keys()].map((elem) => elem + 11),
-			new Array(10).fill(uri)
-		);
-		console.log(tx.hash);
-		await tx.wait();
-	}
+	// 	console.log("minting");
+	// 	tx = await PrimarySale.purchase(Token.address, 10);
+	// 	console.log(tx.hash);
+	// 	await tx.wait();
+	// }
+	// if (true) {
+	// 	const uri =
+	// 		"https://raw.githubusercontent.com/SurroundingArt64/cdn/master/0000000000000000000000000000000000000000000000000000000000000001.json";
+	// 	console.log("setting");
+	// 	tx = await NFT.setTokenURIs(
+	// 		[...Array(10).keys()].map((elem) => elem + 11),
+	// 		new Array(10).fill(uri)
+	// 	);
+	// 	console.log(tx.hash);
+	// 	await tx.wait();
+	// }
 };
 
 export default func;

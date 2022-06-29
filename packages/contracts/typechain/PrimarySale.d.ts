@@ -23,7 +23,9 @@ interface PrimarySaleInterface extends ethers.utils.Interface {
   functions: {
     "createSale((uint256,address,uint256,uint256,address))": FunctionFragment;
     "currencies(address)": FunctionFragment;
+    "getCreatedSales(address)": FunctionFragment;
     "initialize(address,address[],uint256[])": FunctionFragment;
+    "makeSale(uint256)": FunctionFragment;
     "owner()": FunctionFragment;
     "purchase(address,uint256)": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
@@ -41,15 +43,23 @@ interface PrimarySaleInterface extends ethers.utils.Interface {
         tokenId: BigNumberish;
         owner: string;
         price: BigNumberish;
-        duration: BigNumberish;
+        untill: BigNumberish;
         currency: string;
       }
     ]
   ): string;
   encodeFunctionData(functionFragment: "currencies", values: [string]): string;
   encodeFunctionData(
+    functionFragment: "getCreatedSales",
+    values: [string]
+  ): string;
+  encodeFunctionData(
     functionFragment: "initialize",
     values: [string, string[], BigNumberish[]]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "makeSale",
+    values: [BigNumberish]
   ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
@@ -80,7 +90,12 @@ interface PrimarySaleInterface extends ethers.utils.Interface {
 
   decodeFunctionResult(functionFragment: "createSale", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "currencies", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getCreatedSales",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "makeSale", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "purchase", data: BytesLike): Result;
   decodeFunctionResult(
@@ -103,17 +118,39 @@ interface PrimarySaleInterface extends ethers.utils.Interface {
   ): Result;
 
   events: {
+    "CreatePrimarySale(tuple)": EventFragment;
     "Initialized(uint8)": EventFragment;
     "OwnershipTransferred(address,address)": EventFragment;
     "SetAdmin(address,bool)": EventFragment;
     "SetCurrency(address,uint256)": EventFragment;
   };
 
+  getEvent(nameOrSignatureOrTopic: "CreatePrimarySale"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "SetAdmin"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "SetCurrency"): EventFragment;
 }
+
+export type CreatePrimarySaleEvent = TypedEvent<
+  [
+    [BigNumber, string, BigNumber, BigNumber, string] & {
+      tokenId: BigNumber;
+      owner: string;
+      price: BigNumber;
+      untill: BigNumber;
+      currency: string;
+    }
+  ] & {
+    c: [BigNumber, string, BigNumber, BigNumber, string] & {
+      tokenId: BigNumber;
+      owner: string;
+      price: BigNumber;
+      untill: BigNumber;
+      currency: string;
+    };
+  }
+>;
 
 export type InitializedEvent = TypedEvent<[number] & { version: number }>;
 
@@ -178,7 +215,7 @@ export class PrimarySale extends BaseContract {
         tokenId: BigNumberish;
         owner: string;
         price: BigNumberish;
-        duration: BigNumberish;
+        untill: BigNumberish;
         currency: string;
       },
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -186,10 +223,20 @@ export class PrimarySale extends BaseContract {
 
     currencies(arg0: string, overrides?: CallOverrides): Promise<[BigNumber]>;
 
+    getCreatedSales(
+      user: string,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber[]]>;
+
     initialize(
       token_: string,
       _currencies: string[],
       _prices: BigNumberish[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    makeSale(
+      tokenId: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -213,7 +260,7 @@ export class PrimarySale extends BaseContract {
         tokenId: BigNumber;
         owner: string;
         price: BigNumber;
-        duration: BigNumber;
+        untill: BigNumber;
         currency: string;
       }
     >;
@@ -243,7 +290,7 @@ export class PrimarySale extends BaseContract {
       tokenId: BigNumberish;
       owner: string;
       price: BigNumberish;
-      duration: BigNumberish;
+      untill: BigNumberish;
       currency: string;
     },
     overrides?: Overrides & { from?: string | Promise<string> }
@@ -251,10 +298,20 @@ export class PrimarySale extends BaseContract {
 
   currencies(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+  getCreatedSales(
+    user: string,
+    overrides?: CallOverrides
+  ): Promise<BigNumber[]>;
+
   initialize(
     token_: string,
     _currencies: string[],
     _prices: BigNumberish[],
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  makeSale(
+    tokenId: BigNumberish,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -278,7 +335,7 @@ export class PrimarySale extends BaseContract {
       tokenId: BigNumber;
       owner: string;
       price: BigNumber;
-      duration: BigNumber;
+      untill: BigNumber;
       currency: string;
     }
   >;
@@ -308,7 +365,7 @@ export class PrimarySale extends BaseContract {
         tokenId: BigNumberish;
         owner: string;
         price: BigNumberish;
-        duration: BigNumberish;
+        untill: BigNumberish;
         currency: string;
       },
       overrides?: CallOverrides
@@ -316,12 +373,19 @@ export class PrimarySale extends BaseContract {
 
     currencies(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+    getCreatedSales(
+      user: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber[]>;
+
     initialize(
       token_: string,
       _currencies: string[],
       _prices: BigNumberish[],
       overrides?: CallOverrides
     ): Promise<void>;
+
+    makeSale(tokenId: BigNumberish, overrides?: CallOverrides): Promise<void>;
 
     owner(overrides?: CallOverrides): Promise<string>;
 
@@ -341,7 +405,7 @@ export class PrimarySale extends BaseContract {
         tokenId: BigNumber;
         owner: string;
         price: BigNumber;
-        duration: BigNumber;
+        untill: BigNumber;
         currency: string;
       }
     >;
@@ -367,6 +431,52 @@ export class PrimarySale extends BaseContract {
   };
 
   filters: {
+    "CreatePrimarySale(tuple)"(
+      c?: null
+    ): TypedEventFilter<
+      [
+        [BigNumber, string, BigNumber, BigNumber, string] & {
+          tokenId: BigNumber;
+          owner: string;
+          price: BigNumber;
+          untill: BigNumber;
+          currency: string;
+        }
+      ],
+      {
+        c: [BigNumber, string, BigNumber, BigNumber, string] & {
+          tokenId: BigNumber;
+          owner: string;
+          price: BigNumber;
+          untill: BigNumber;
+          currency: string;
+        };
+      }
+    >;
+
+    CreatePrimarySale(
+      c?: null
+    ): TypedEventFilter<
+      [
+        [BigNumber, string, BigNumber, BigNumber, string] & {
+          tokenId: BigNumber;
+          owner: string;
+          price: BigNumber;
+          untill: BigNumber;
+          currency: string;
+        }
+      ],
+      {
+        c: [BigNumber, string, BigNumber, BigNumber, string] & {
+          tokenId: BigNumber;
+          owner: string;
+          price: BigNumber;
+          untill: BigNumber;
+          currency: string;
+        };
+      }
+    >;
+
     "Initialized(uint8)"(
       version?: null
     ): TypedEventFilter<[number], { version: number }>;
@@ -424,7 +534,7 @@ export class PrimarySale extends BaseContract {
         tokenId: BigNumberish;
         owner: string;
         price: BigNumberish;
-        duration: BigNumberish;
+        untill: BigNumberish;
         currency: string;
       },
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -432,10 +542,20 @@ export class PrimarySale extends BaseContract {
 
     currencies(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+    getCreatedSales(
+      user: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     initialize(
       token_: string,
       _currencies: string[],
       _prices: BigNumberish[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    makeSale(
+      tokenId: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -482,7 +602,7 @@ export class PrimarySale extends BaseContract {
         tokenId: BigNumberish;
         owner: string;
         price: BigNumberish;
-        duration: BigNumberish;
+        untill: BigNumberish;
         currency: string;
       },
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -493,10 +613,20 @@ export class PrimarySale extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
+    getCreatedSales(
+      user: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     initialize(
       token_: string,
       _currencies: string[],
       _prices: BigNumberish[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    makeSale(
+      tokenId: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
