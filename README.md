@@ -1,5 +1,8 @@
 # Gr14Marketplace
 
+<img width="1435" alt="screenshot" src="https://user-images.githubusercontent.com/97761020/176533942-0564c44c-9230-4c71-b1c7-9ec2e73ad3d1.png">
+
+
 DEMO VIDEO: https://drive.google.com/file/d/1tuyMhCJf69NFThwxRbN6fntgGp_aCi_i/view?usp=sharing
 
 ## Development server
