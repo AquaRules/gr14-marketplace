@@ -45,6 +45,8 @@
     "forms": "link:@types/rebass/forms",
     "framer-motion": "^6.3.15",
     "metamask-react": "^2.4.0",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.1",
     "next": "12.1.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",
