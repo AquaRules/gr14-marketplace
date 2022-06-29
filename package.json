@@ -43,7 +43,6 @@
     "core-js": "^3.23.2",
     "ethers": "^5.6.9",
     "formik": "^2.2.9",
-    "forms": "link:@types/rebass/forms",
     "framer-motion": "^6.3.15",
     "metamask-react": "^2.4.0",
     "mongodb": "^4.7.0",
